@@ -4,9 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MY LIBRARY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
+        integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
+        crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!--HEADER-->
+    
+    <header class="page-header page-header__library">
+        <div class="container">
+            <nav class="page-header__navigation">
+                <a href="/" class="logo">
+                    <span class="logo__word">Filmoteka</span>
+                </a>
+                <ul class="site-nav">
+                    <li class="site-nav__item">
+                        <a href="./index.html" class="site-nav__link">Home</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a href="./my-library.html" class="site-nav__link site-nav__link--current">My library</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__buttons">
+            <button type="button" class="header__button button">Watched</button>
+            <button type="button" class="header__button button">Queue</button>
+            </div>
+        </div>
+    </header>
     
 </body>
 </html>
