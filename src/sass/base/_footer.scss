@@ -1,0 +1,57 @@
+.footer {
+  padding: 30px 0;
+  background-color: $footer-bg-color;
+
+  &.is-fixed {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  &_wrap {
+    @include flex(wrap);
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  &_text {
+    @include font($fs: 16px, $fw: 400, $lh: 18.75px);
+    color: $footer-title-color;
+  }
+
+  &_icon-heart {
+    fill: $acsent-color;
+    margin: 0 10px;
+  }
+
+  &_link {
+    color: $footer-title-color;
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    // &_wrap {
+    //   max-width: 280px;
+    // }
+
+    &_text {
+      @include font($fs: 14px, $fw: 400, $lh: 16.41px);
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    &_text {
+      &:not(:last-child) {
+        margin-right: 3px;
+      }
+    }
+  }
+}
