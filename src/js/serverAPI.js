@@ -1,4 +1,4 @@
-export default class serverAPI {
+export default class    ServerAPI {
     constructor() {
         this.APIkey = 'fd6eb8c46328921cf1133ef8e877d946';
         this.baseURL = 'https://api.themoviedb.org/3/';
