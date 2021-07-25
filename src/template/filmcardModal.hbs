@@ -1,0 +1,33 @@
+<article class="film-card ">
+    <div class="img_thumb">
+        <img src=" {{poster_path}} " data-source="{{}}" alt="" />
+    </div>
+    <ul class="stats">
+        <h3> {{title}} </h3>
+        <li class="stats-item"> Vote / Votes 
+            <span> 
+                {{vote_average}} 
+            </span>   
+                <p> 
+                    / {{vote_count}}
+                </p>
+        </li>
+
+        <li class="stats-item"> Popularity
+                {{popularity}}
+        </li> 
+
+        <li class="stats-item"> Original Title
+                {{original_title}}
+        </li>
+
+        <li class="stats-item"> Genre
+                {{genre_ids}}
+        </li>
+
+        <li class="stats-item"> About
+            {{overview}}
+        </li>
+        
+    </ul>
+</article>
