@@ -74,7 +74,7 @@
 .team-member-name {
   display: inline-block;
   margin-right: 15px;
-  color: $acsent-color;
+  color: $accent-color;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.33;
@@ -106,12 +106,12 @@
 
 .modal-close-button:hover .modal-close-icon,
 .modal-close-button:focus .modal-close-icon {
-  fill: $acsent-color;
+  fill: $accent-color;
 }
 
 .team-member-social-link:hover,
 .team-member-social-link:focus {
-  background-color: $acsent-color;
+  background-color: $accent-color;
 }
 
 .team-member-social-link:hover .team-member-social-icon,
