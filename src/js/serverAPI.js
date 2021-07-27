@@ -61,9 +61,9 @@ export default class ServerAPI {
             genres: filmData.genres ?
                 filmData.genres.map(genre => genre.name).join(', ') : this.getGenreById(filmData.genre_ids).join(', '),
             year: filmData.release_date.slice(0, 4),
-            vote_average: filmData.vote_average,
+            vote_average: filmData.vote_average.toFixed(1),
             overview: filmData.overview,
-            popularity: filmData.popularity,
+            popularity: filmData.popularity.toFixed(1),
             vote_count: filmData.vote_count,
             original_title: filmData.original_title
         }
