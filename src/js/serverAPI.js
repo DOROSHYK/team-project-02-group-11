@@ -51,7 +51,7 @@ export default class ServerAPI {
     getGenreById(id) {
         return id.map(id_genre => this.genres.find(genre => id_genre === genre.id).name)
     }
-    getOptionsForRender(film) {
+    // getOptionsForRender(film) {
         
-    }
+    // }
 }
