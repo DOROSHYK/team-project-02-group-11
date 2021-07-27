@@ -10,7 +10,7 @@ export default class ServerAPI {
         this.genres = genres;
 
     }
-    getPoularFilmList() {
+    getPopularFilmList() {
         return fetch(`${this.baseURL}trending/all/week?api_key=${this.APIkey}&page=${this.page}&language=${this.language}`)
             .then(response => {
                if (response.ok) return response.json();
