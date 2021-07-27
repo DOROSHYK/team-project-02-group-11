@@ -10,7 +10,7 @@ api.getFilmByKeyword('sherlock').then(data => {
     console.log(genres);
     const filmData = data.results[0]
     const options = {
-        img_src: filmData.poster_path,
+        poster_path: filmData.poster_path,
         title: filmData.title,
         genres: genres.join(', '),
         year: filmData.release_date.slice(0, 4),
@@ -18,7 +18,7 @@ api.getFilmByKeyword('sherlock').then(data => {
     }
     const markup = cardTemplate(options);
     console.log(markup)
-    document.body.insertAdjacentHTML('afterbegin', markup);
-    document.body.insertAdjacentHTML('afterbegin', markup);
+    // document.body.insertAdjacentHTML('afterbegin', markup);
+    // document.body.insertAdjacentHTML('afterbegin', markup);
 })
 
