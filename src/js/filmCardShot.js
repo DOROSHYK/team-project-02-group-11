@@ -7,7 +7,7 @@ api.getFilmByKeyword('throne').then(data => {
     console.log(api.getObjectForRender(filmData));
     const markup = cardTemplate(api.getObjectForRender(filmData));
     console.log(markup)
-    document.body.insertAdjacentHTML('afterbegin', markup);
+    // document.body.insertAdjacentHTML('afterbegin', markup);
     // document.body.insertAdjacentHTML('afterbegin', markup);
 })
 
