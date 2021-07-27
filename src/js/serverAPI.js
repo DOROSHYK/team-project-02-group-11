@@ -51,7 +51,22 @@ export default class ServerAPI {
     getGenreById(id) {
         return id.map(id_genre => this.genres.find(genre => id_genre === genre.id).name)
     }
-    // getOptionsForRender(film) {
-        
-    // }
+    //принимает объект одного фильма в формате, который получен с сервера. Возвращает объект для рендеринга
+    //разметки по шаблону. Обїект можно сразу передавать в функцию-шаблонизатор (пример в файле filmCardShot.js).
+    // названия перменных в Вашем шаблоне должны совпадать с именами свойств в возвращаемом объекте
+    getObjectForRender(filmData) {
+        return {
+            poster_path: filmData.poster_path,
+            title: filmData.title,
+            genres: filmData.genres ?
+                filmData.genres.map(genre => genre.name).join(', ') : this.getGenreById(filmData.genre_ids).join(', '),
+            year: filmData.release_date.slice(0, 4),
+            vote_average: filmData.vote_average,
+            overview: filmData.overview,
+            popularity: filmData.popularity,
+            vote_count: filmData.vote_count,
+            original_title: filmData.original_title
+        }
+    }
+
 }
