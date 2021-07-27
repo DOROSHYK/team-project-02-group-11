@@ -27,7 +27,9 @@
   },
   "dependencies": {
     "basiclightbox": "^5.0.4",
+    "express": "^4.17.1",
     "handlebars": "^4.7.7",
-    "modern-normalize": "^1.1.0"
+    "modern-normalize": "^1.1.0",
+    "path": "^0.12.7"
   }
 }
