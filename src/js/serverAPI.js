@@ -50,5 +50,8 @@ export default class ServerAPI {
     //принимает числовой массив с id жанров, возвращает строковый массив названий жанров
     getGenreById(id) {
         return id.map(id_genre => this.genres.find(genre => id_genre === genre.id).name)
- }
+    }
+    // getOptionsForRender(film) {
+        
+    // }
 }
