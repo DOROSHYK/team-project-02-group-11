@@ -67,13 +67,14 @@ export default class ServerAPI {
     //принимает объект одного фильма в формате, который получен с сервера. Возвращает объект для рендеринга
     //разметки по шаблону. Обїект можно сразу передавать в функцию-шаблонизатор (пример в файле filmCardShot.js).
     // названия перменных в Вашем шаблоне должны совпадать с именами свойств в возвращаемом объекте
+    
     getObjectForRender(filmData) {
         return {
-            poster_path: filmData.poster_path,
-            title: filmData.title,
+            poster_path: filmData.poster_path || filmData.backdrop_path,
+            title: filmData.title || filmData.original_name,
             genres: filmData.genres ?
                 filmData.genres.map(genre => genre.name).join(', ') : this.getGenreById(filmData.genre_ids), 
-            year: filmData.release_date === undefined ? '' : filmData.release_date.slice(0, 4),
+            year: filmData.release_date === undefined ? filmData.first_air_date.slice(0, 4) : filmData.release_date.slice(0, 4),
             vote_average: filmData.vote_average.toFixed(1),
             overview: filmData.overview,
             popularity: filmData.popularity.toFixed(1),
