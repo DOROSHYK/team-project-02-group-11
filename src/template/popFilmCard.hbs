@@ -1,0 +1,9 @@
+{{#each this}}
+<li class='film-cards__item'>
+    <a href="#" class='film-details film-cards__link'>
+        <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="{{title}}" class='film-cards__img'>
+        <p class="film-cards__title">{{title}}</p>
+        <p class='film-cards__info'>{{genres}} | {{year}}</p>
+    </a>
+</li>
+{{/each}}
