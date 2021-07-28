@@ -16,8 +16,6 @@ function renderPopFilms(filmData) {
     const markup = tempFilmCard(dataForRender);
     refs.popFilmList.insertAdjacentHTML('afterbegin', markup);
 refs.footer.classList.remove('is-fixed');
-   
-
 }
 
 
