@@ -9,9 +9,10 @@ export default class ServerAPI {
         this.keyWord = '';
         this.genres = genres;
 
-    }
+         } 
+        // movie  а не all
     getPopularFilmList() {
-        return fetch(`${this.baseURL}trending/all/week?api_key=${this.APIkey}&page=${this.page}&language=${this.language}`)
+        return fetch(`${this.baseURL}trending/movie/week?api_key=${this.APIkey}&page=${this.page}&language=${this.language}`)
             .then(response => {
                if (response.ok) return response.json();
                throw new Error("Error fetching data");
