@@ -70,7 +70,7 @@ export default class ServerAPI {
     
     getObjectForRender(filmData) {
         return {
-            poster_path: filmData.poster_path === undefined ? filmData.backdrop_path : filmData.poster_path,
+            poster_path: filmData.poster_path || filmData.backdrop_path,
             title: filmData.title || filmData.original_name,
             genres: filmData.genres ?
                 filmData.genres.map(genre => genre.name).join(', ') : this.getGenreById(filmData.genre_ids), 
