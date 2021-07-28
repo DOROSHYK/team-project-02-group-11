@@ -1,29 +1,33 @@
 <header class="header">
-  <div class="header__container container">
-    <div class="header__container-icon">
-      <ul class="header__icon-list">
+  <div class="header-container">
+    <div class="header-container__icon">
+      <ul class="header-icon__list">
         <li>
-          <svg class="header__icon">
+          <svg class="header-icon">
             <use href="./images/sprite.svg#icon-film"></use>
           </svg>
         </li>
-        <li class="header__name">FILMOTEKA</li>
+        <li class="header-name">FILMOTEKA</li>
       </ul>
     </div>
-    <div>
-      <ul class="header__navigation">
-        <li class="header__navigation-list">  HOME</li>
-        <li class="header__navigation-list">  MY LIBRARY</li>
+    <div class="header-nav__container">
+      <ul class="header-navigation">
+        <li class="header-navigation__list">
+          <a class="header-nav__home" href="/index.html">HOME</a>
+        </li>
+        <li class="header-navigation__list">
+          <a class="header-nav__library" href="">MY LIBRARY</a>
+        </li>
       </ul>
     </div>
   </div>
-  <div class="header__input-container">
-    <form class="header__input-form">
+  <div class="header-input__container">
+    <form class="header-input__form">
       <input type="text" name="data-search" id class="header-input" placeholder="Поиск фильмов" />
-      <svg class="header__icon-input">
+      <svg class="header-icon__input">
         <use href="./images/sprite.svg#icon-search-2"></use>
       </svg>
     </form>
-    <div class="input__line"></div>
+    <div class="input-line"></div>
   </div>
 </header>

@@ -1,104 +1,146 @@
 .header {
-  width: auto;
+  width: 100%;
   height: 230px;
-  background-color: black;
+  background: no-repeat;
+  background-size: cover;
+  background-image: url('../images/bcg_header_320.png');
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.56);
 }
-.header__container {
+.header-container {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: baseline;
 }
 
-.header__container-icon {
-  // padding-left: 70px;
-  padding-top: 41px;
+.header-icon__list {
+  margin-left: 21px;
+  margin-top: 41px;
 }
 
-.header__icon-list {
+.header-icon__list {
   display: flex;
   align-items: center;
   text-align: center;
   text-transform: uppercase;
 }
 
-.header__icon {
+.header-icon {
   height: 24px;
   width: 24px;
   margin-right: 10px;
 }
 
-.header__name {
-  width: 141px;
-  height: 35px;
-  left: 105px;
-  top: 41px;
-
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 30px;
-  line-height: 35px;
-
-  color: #ffffff;
+.header-name {
+  display: none;
 }
 
-.header__navigation {
+.header-navigation {
   display: flex;
   flex-direction: row;
-  padding-right: 70px;
+  padding-right: 20px;
 }
 
-.header__navigation :last-child {
+//1024
+// .header__navigation {
+//   display: flex;
+//   flex-direction: row;
+//   padding-right: 70px;
+// }
+
+.header-navigation :last-child {
   margin-right: 0px;
 }
 
-.header__navigation-list {
+.header-navigation__list {
   margin-right: 39px;
   padding-top: 60px;
-  width: 35px;
-  height: 14px;
-  left: 810px;
-  top: 58px;
+  // width: 35px;
+  // height: 14px;
+  // left: 810px;
+  // top: 58px;
+}
 
+.header-nav__home {
+  position: relative;
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.166;
+  white-space: nowrap;
+
+  color: #ffffff;
+
+  &:after {
+    display: inline-block;
+    content: '';
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+    top: 16px;
+    margin-bottom: -1px;
+    background-color: #ff6b08;
+    height: 4px;
+    border-radius: 2px;
+  }
+}
+
+.header-nav__library {
+  position: relative;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.166;
   white-space: nowrap;
 
   color: #ffffff;
 }
 
-.header__input-container {
+.header-input__container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 41px;
 }
-.input__line {
-  width: 350px;
-  height: 0px;
-  left: 344px;
-  top: 133px;
 
-  border: 0.5px solid #ffffff;
+.header-input__form {
+  width: 280px;
+  height: 20px;
 }
 
 .header-input {
-  width: 336px;
+  width: 260px;
   height: 20px;
   left: 344px;
   top: 113px;
   border: none;
-  background: rgba(0, 0, 0, 0.56);
+  background: rgba(0, 0, 0, 0.02);
 }
 
-.header__icon-input {
-  width: 13px;
+.header-icon__input {
+  width: 12px;
   height: 12px;
 }
 
 input::placeholder {
+  // width: 105px;
+  // height: 16px;
+  // left: 345px;
+  // top: 113px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.142;
+  display: flex;
+  align-items: center;
+
   color: #ffffff;
 }
 
@@ -106,5 +148,66 @@ input,
 textarea {
   outline: none;
   border: none;
-  border: solid 1px #f2f2f2;
+  border: solid 1px rgba(255, 255, 255, 1);
+}
+
+input,
+select,
+textarea {
+  color: rgba(255, 255, 255, 1);
+}
+
+.input-line {
+  width: 275px;
+  height: 0px;
+  left: 344px;
+  top: 133px;
+
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    background-image: url('../images/bcg_header_768.png');
+  }
+
+  .header-icon__list {
+    margin-left: 70px;
+  }
+  .header-name {
+    display: block;
+    width: 141px;
+    height: 35px;
+    left: 105px;
+    top: 41px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 35px;
+
+    color: #ffffff;
+  }
+
+  .header-navigation {
+    padding-right: 75px;
+  }
+
+  .header-input__form {
+    width: 336px;
+  }
+
+  .header-input {
+    width: 320px;
+  }
+  .input-line {
+    width: 335px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    background-image: url('../images/bcg_header_1024.png');
+  }
 }
