@@ -4,7 +4,7 @@ export default class ServerAPI {
         this.APIkey = 'fd6eb8c46328921cf1133ef8e877d946';
         this.baseURL = 'https://api.themoviedb.org/3/';
         this.mediaType = 'movie';
-        this.page = '1';
+        this.page = 1;
         this.language = 'en';
         this.keyWord = '';
         this.genres = genres;
@@ -13,8 +13,9 @@ export default class ServerAPI {
     getPopularFilmList() {
         return fetch(`${this.baseURL}trending/all/week?api_key=${this.APIkey}&page=${this.page}&language=${this.language}`)
             .then(response => {
-               if (response.ok) return response.json();
-               throw new Error("Error fetching data");
+                if (response.ok) 
+                    return response.json();
+                throw new Error("Error fetching data");
             })
             .catch(err => {
                 console.error("Error: ", err);
@@ -81,6 +82,10 @@ export default class ServerAPI {
             vote_count: filmData.vote_count,
             original_title: filmData.original_title
         }
+    }
+
+    incrementPage() {
+        this.page += 1;
     }
 
 }

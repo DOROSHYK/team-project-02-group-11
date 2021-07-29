@@ -7,7 +7,7 @@ const refs = getRefs();
 const API = new ServerAPI;
 API.getPopularFilmList().then(renderPopFilms);
 
-function renderPopFilms(filmData) {
+export function renderPopFilms(filmData) {
 
     const dataForRender = filmData.results.map(result => API.getObjectForRender(result));
 
@@ -17,6 +17,14 @@ function renderPopFilms(filmData) {
     refs.popFilmList.insertAdjacentHTML('afterbegin', markup);
 refs.footer.classList.remove('is-fixed');
 }
+
+
+
+
+
+
+
+
 
 
 
