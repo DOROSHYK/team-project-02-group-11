@@ -10,8 +10,11 @@ const API = new ServerAPI;
 refs.inputRef.addEventListener('input', onMagic);
 
 function onMagic(e) {
-    e.preventDefault();  
-    const searchQuery = e.target.value;
+
+  e.preventDefault();
+  refs.gallery.innerHTML = '';
+  refs.popFilmList.classList.remove('visually-hidden');
+  const searchQuery = e.target.value;
 
     if (!searchQuery.trim().length) return;
     
