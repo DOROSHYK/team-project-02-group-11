@@ -3,16 +3,14 @@ import cardImage from '../template/filmCardShot';
 
 import ServerAPI from './serverAPI.js';
 import getRefs from './get-refs';
-import { startSpin, stopSpin } from './spiner/spiner.js';
+
 
 const refs = getRefs();
 const API = new ServerAPI;
 
 export default function createCard(someWords) {
-  
-
+      
     if (someWords.length !== 0) {
-
         
         const resultImages = someWords.results.map(result => {
             return cardImage(result);
