@@ -79,7 +79,8 @@ export default class ServerAPI {
             overview: filmData.overview,
             popularity: filmData.popularity.toFixed(1),
             vote_count: filmData.vote_count,
-            original_title: filmData.original_title
+            original_title: filmData.original_title,
+            id: filmData.id
         }
     }
 
