@@ -30,6 +30,7 @@
     "express": "^4.17.1",
     "handlebars": "^4.7.7",
     "modern-normalize": "^1.1.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "spin.js": "^4.1.0"
   }
 }
