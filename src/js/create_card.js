@@ -1,4 +1,9 @@
-import cardImage from '../temptate/filmcardModal';
+import cardImage from '../template/filmCardShot';
+import ServerAPI from './serverAPI';
+import getRefs from './get-refs';
+
+const refs = getRefs();
+const API = new ServerAPI;
 
 export default function createCard(someWords) {
 
