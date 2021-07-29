@@ -9,9 +9,10 @@ export default class ServerAPI {
         this.keyWord = '';
         this.genres = genres;
 
-    }
+         } 
+        // movie  а не all
     getPopularFilmList() {
-        return fetch(`${this.baseURL}trending/all/week?api_key=${this.APIkey}&page=${this.page}&language=${this.language}`)
+        return fetch(`${this.baseURL}trending/movie/week?api_key=${this.APIkey}&page=${this.page}&language=${this.language}`)
             .then(response => {
                 if (response.ok) 
                     return response.json();
@@ -80,7 +81,8 @@ export default class ServerAPI {
             overview: filmData.overview,
             popularity: filmData.popularity.toFixed(1),
             vote_count: filmData.vote_count,
-            original_title: filmData.original_title
+            original_title: filmData.original_title,
+            id: filmData.id
         }
     }
 
