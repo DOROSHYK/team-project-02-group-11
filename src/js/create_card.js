@@ -1,4 +1,6 @@
-import cardImage from '../template/filmcardModal';
+
+import cardImage from '../template/filmCardShot';
+
 import ServerAPI from './serverAPI';
 import getRefs from './get-refs';
 
