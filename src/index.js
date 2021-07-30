@@ -6,6 +6,8 @@ import './sass/main.scss';
 import './js/close-modal.js';
 import './js/serverAPI.js';
 import './js/renderPopFilmList';
+
+import './static/js/app.js';
 import './js/infinity-scroll.js';
 
 
