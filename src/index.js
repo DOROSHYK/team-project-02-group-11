@@ -3,5 +3,5 @@ import './js/close-modal.js';
 import './js/serverAPI.js';
 //import './js/filmCardShot.js';
 import './js/renderPopFilmList';
-
+import './static/js/app.js';
 
