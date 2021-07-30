@@ -50,7 +50,7 @@ const router = async () => {
 window.addEventListener("popstate", router);
 
 export default document.addEventListener("DOMContentLoaded", () => {
-    router.routes =  { path: "/", view:MainPage};
+    
     document.body.addEventListener("click", e => {
         if (e.target.matches("[data-link]")) {
             e.preventDefault();
