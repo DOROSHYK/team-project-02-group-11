@@ -1,7 +1,10 @@
 import cardTemplate from '../template/filmCardShot.hbs';
 import filmcardModal from '../template/filmcardModal.hbs'
 import ServerAPI from './serverAPI';
+import LocalStorage from './localStorage';
 const api = new ServerAPI;
+const LS = new LocalStorage();
+
 
 api.getFilmByKeyword('throne').then(data => {
     const filmData = data.results[0];
@@ -19,16 +22,16 @@ const onClick = (e) => {
     if (!id) return 
     api.getFilmInfoById(+id).then(dataFilm => {
         const markObj = api.getObjectForRender(dataFilm);
-        const films = JSON.parse(localStorage.getItem('films'));
-        console.log(films);
-        films.all.push(markObj);
-        localStorage.setItem('films', JSON.stringify(films));
+        LS.addFilm(markObj);
+        // LS.setQueue();
         const markup = filmcardModal(markObj);
-        console.log(markup);
         document.body.insertAdjacentHTML('afterbegin', markup);
     })
 }
 document.body.addEventListener('click', onClick);
+
+
+
 
 
 
