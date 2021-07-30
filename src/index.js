@@ -13,3 +13,10 @@ import './js/storageEventListeners.js';
 
 
 
+
+import './js/infinity-scroll.js';
+
+
+// import './js/filmCardShot.js';
+import './js/search_film';
+
