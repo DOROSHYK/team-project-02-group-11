@@ -103,6 +103,10 @@
   cursor: pointer;
 }
 
+.modal-type-selector {
+  z-index: 5;
+}
+
 .modal-type-selector:first-child {
   margin-left: auto;
   margin-right: 5px;
