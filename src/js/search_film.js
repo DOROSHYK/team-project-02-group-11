@@ -9,18 +9,21 @@ const API = new ServerAPI;
 
 refs.inputRef.addEventListener('input', onMagic);
 
-function onMagic(e) {
 
+
+function onMagic(e) {
   e.preventDefault();
+  
   refs.gallery.innerHTML = '';
   refs.popFilmList.classList.remove('visually-hidden');
   const searchQuery = e.target.value;
 
     if (!searchQuery.trim().length) return;
     
-  //  API.keyWord = searchQuery;
+   
     const whatThis = API.getFilmByKeyword(searchQuery)
                         .then(make)
 
 };
 
+export {onMagic,}

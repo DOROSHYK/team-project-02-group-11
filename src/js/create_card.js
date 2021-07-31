@@ -20,3 +20,5 @@ export default function createCard(someWords) {
     }
     
 }
+
+export {createCard }

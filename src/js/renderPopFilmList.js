@@ -7,16 +7,17 @@ const refs = getRefs();
 const API = new ServerAPI;
 API.getPopularFilmList().then(renderPopFilms);
 
-export function renderPopFilms(filmData) {
+function renderPopFilms(filmData) {
 
     const dataForRender = filmData.results.map(result => API.getObjectForRender(result));
 
-    
-    console.log(dataForRender);
+
     const markup = tempFilmCard(dataForRender);
     refs.popFilmList.insertAdjacentHTML('afterbegin', markup);
 refs.footer.classList.remove('is-fixed');
 }
+
+export {renderPopFilms }
 
 
 
