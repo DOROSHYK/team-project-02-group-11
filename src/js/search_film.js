@@ -1,13 +1,12 @@
 import getRefs from './get-refs';
-import genres from './genres.json';
 import ServerAPI from './serverAPI';
 import make from './create_card';
 
-
+const debounce = require('lodash.debounce');
 const refs = getRefs();
 const API = new ServerAPI;
 
-refs.inputRef.addEventListener('input', onMagic);
+refs.inputRef.addEventListener('input',  debounce(onMagic, 700));
 
 function onMagic(e) {
 
@@ -19,8 +18,10 @@ function onMagic(e) {
     if (!searchQuery.trim().length) return;
     
   //  API.keyWord = searchQuery;
-    const whatThis = API.getFilmByKeyword(searchQuery)
-                        .then(make)
+  const whatThis = API.getFilmByKeyword(searchQuery)
+    .then(make);
+  
+ 
 
 };
 
