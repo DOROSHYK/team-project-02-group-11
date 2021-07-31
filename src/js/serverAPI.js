@@ -86,8 +86,5 @@ export default class ServerAPI {
         }
     }
 
-    incrementPage() {
-        this.page += 1;
-    }
-
+   
 }

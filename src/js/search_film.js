@@ -4,7 +4,10 @@ import make from './create_card';
 
 const refs = getRefs();
 
-refs.inputRef.addEventListener('input', onMagic);
+// refs.inputRef.addEventListener('input', onMagic);
+
+
+
 
 const debounce = require('lodash.debounce');
 
@@ -21,13 +24,27 @@ function onMagic(e) {
   //refs.popFilmList.classList.remove('visually-hidden');
   const searchQuery = e.target.value;
 
-    if (!searchQuery.trim().length) return;
+
+// function onMagic(e) {
+//   // e.preventDefault();
+  
+//   refs.gallery.innerHTML = '';
+//   refs.popFilmList.classList.remove('visually-hidden');
+//   const searchQuery = e.target.value;
+
+//     if (!searchQuery.trim().length) return;
     
+
+   
+//     const whatThis = API.getFilmByKeyword(searchQuery)
+//                         .then(make)
+
   //  API.keyWord = searchQuery;
   const whatThis = API.getFilmByKeyword(searchQuery)
     .then(make);
   
- 
 
-};
 
+// };
+
+// export {onMagic,}
