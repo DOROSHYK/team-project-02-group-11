@@ -1,7 +1,17 @@
 import cardTemplate from '../template/filmCardShot.hbs';
 import filmcardModal from '../template/filmcardModal.hbs'
 import ServerAPI from './serverAPI';
+import getRefs from './get-refs';
+const refs = getRefs();
 const api = new ServerAPI;
+import searchQuery from './search_film';
+const onCatch = () => {
+    
+    console.log('запрос');
+    console.log(searchQuery);
+}
+refs.inputRef.addEventListener('input', onCatch);
+
 
 api.getFilmByKeyword('throne').then(data => {
     const filmData = data.results[0];

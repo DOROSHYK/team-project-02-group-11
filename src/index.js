@@ -1,4 +1,4 @@
-import LocalStorage from './js/LocaleStorage';
+import LocalStorage from './js/LocalStorage';
 const LS = new LocalStorage;
 LS.setInit();
 import './sass/main.scss';
@@ -11,6 +11,7 @@ import './static/js/app.js';
 import './js/infinity-scroll.js';
 
 
-// import './js/filmCardShot.js';
+
 import './js/search_film';
 import './js/changePage.js';
+ import './js/filmCardShot.js';

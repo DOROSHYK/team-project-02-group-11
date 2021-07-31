@@ -12,7 +12,7 @@ export default class ServerAPI {
          } 
         // movie  а не all
     getPopularFilmList() {
-        return fetch(`${this.baseURL}trending/movie/week?api_key=${this.APIkey}&page=${this.page}&language=${this.language}`)
+        return fetch(`${this.baseURL}trending/${this.mediaType}/week?api_key=${this.APIkey}&page=${this.page}&language=${this.language}`)
             .then(response => {
                 if (response.ok) 
                     return response.json();
