@@ -14,6 +14,14 @@ export default function createCard(someWords) {
             return cardImage(result);
         })
 
+        resultImages = someWords.results.map(result => {
+             
+            let some = API.getObjectForRender(result); // или одной  строкой?
+            return   cardImage(some);
+        
+       } ).join('')
+    } 
+    
         refs.popFilmList.classList.add('visually-hidden');
         refs.gallery.insertAdjacentHTML('beforeend', resultImages);
             
