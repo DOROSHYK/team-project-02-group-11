@@ -6,8 +6,8 @@ import make from './create_card';
 
 
 
-const refs = getRefs();
-const API = new ServerAPI;
+//const refs = getRefs();
+//const API = new ServerAPI;
 
 refs.inputRef.addEventListener('input', onMagic);
 refs.inputRef.addEventListener('focus', (() => {
