@@ -1,6 +1,19 @@
+import { navigateTo } from '../static/js/app.js';
 import getRefs from './get-refs';
 import ServerAPI from './serverAPI';
 import make from './create_card';
+
+
+
+
+const refs = getRefs();
+const API = new ServerAPI;
+
+refs.inputRef.addEventListener('input', onMagic);
+refs.inputRef.addEventListener('focus', (() => {
+  navigateTo('/home');
+  refs.navLinks[1].classList.add('site-nav__link--current');
+}));
 
 const debounce = require('lodash.debounce');
 const refs = getRefs();
@@ -8,11 +21,13 @@ const API = new ServerAPI;
 
 refs.inputRef.addEventListener('input',  debounce(onMagic, 700));
 
+
 function onMagic(e) {
 
   e.preventDefault();
+  const refs = getRefs();
   refs.gallery.innerHTML = '';
-  refs.popFilmList.classList.remove('visually-hidden');
+  //refs.popFilmList.classList.remove('visually-hidden');
   const searchQuery = e.target.value;
 
     if (!searchQuery.trim().length) return;

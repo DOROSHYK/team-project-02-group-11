@@ -12,6 +12,14 @@ export default function createCard(someWords) {
 
     if (someWords.length !== 0) {
 
+//         const resultImages = someWords.results.map(result => {
+//             return cardImage(result);
+        })
+            const refs = getRefs();
+            //refs.popFilmList.classList.add('visually-hidden');
+            refs.gallery.insertAdjacentHTML('beforeend', resultImages);
+
+
         resultImages = someWords.results.map(result => {
              
             let some = API.getObjectForRender(result); // или одной  строкой?
@@ -22,8 +30,9 @@ export default function createCard(someWords) {
 
     } 
     
-        refs.popFilmList.classList.add('visually-hidden');
-        refs.gallery.insertAdjacentHTML('beforeend', resultImages);
+//         refs.popFilmList.classList.add('visually-hidden');
+//         refs.gallery.insertAdjacentHTML('beforeend', resultImages);
+
             
 }
     

@@ -14,6 +14,7 @@ window.addEventListener('scroll', debounce(() => {
         function renderFilms(filmData) {
             const dataForRender = filmData.results.map(result => API.getObjectForRender(result));
             const markup = tempFilmCard(dataForRender);
+            const refs = getRefs();
             refs.popFilmList.insertAdjacentHTML('afterbegin', markup);
             console.log(API.page);
         };

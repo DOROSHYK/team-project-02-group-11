@@ -13,7 +13,7 @@ const getParams = match => {
     }));
 };
 
-const navigateTo = url => {
+export const navigateTo = url => {
     history.pushState(null, null, url);
     router();
 };
@@ -49,8 +49,7 @@ const router = async () => {
 
 window.addEventListener("popstate", router);
 
-export default document.addEventListener("DOMContentLoaded", () => {
-    
+ document.addEventListener("DOMContentLoaded", () => {
     document.body.addEventListener("click", e => {
         if (e.target.matches("[data-link]")) {
             e.preventDefault();
