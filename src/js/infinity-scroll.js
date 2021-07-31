@@ -3,15 +3,15 @@ import ServerAPI from './serverAPI';
 import tempFilmCard from '../template/popFilmCard';
 import getRefs from './get-refs.js';
 import { renderPopFilms } from './renderPopFilmList';
-import { onMagic } from './search_film.js';
 import make from './create_card';
 
 const API = new ServerAPI;
 const refs = getRefs();
 const debounce = require('lodash.debounce');
 
-const searchQuery = refs.inputRef.value;
-console.log(searchQuery);
+let searchQuery = '';
+
+
 
 window.addEventListener('scroll', debounce(() => {
     
@@ -23,18 +23,29 @@ window.addEventListener('scroll', debounce(() => {
                 
         } else if (refs.popFilmList.classList.contains('visually-hidden')) {
             API.page += 1;
-            // refs.inputRef.addEventListener('input', (e) => {
-            //     const searchQuery = e.target.value;
-            //     console.log(searchQuery);
-                API.getFilmByKeyword()
-                        .then(make)
-            // });
-                
-            console.log(API.page);
             
-            // API.getFilmByKeyword().then (data => console.log(data.results));
-            
+            API.getFilmByKeyword(searchQuery)
+                .then(make);
             
         };
     }
 }, 1000));
+
+refs.inputRef.addEventListener('input', onMagic);
+
+
+
+function onMagic(e) {
+  e.preventDefault();
+  
+  refs.gallery.innerHTML = '';
+  refs.popFilmList.classList.remove('visually-hidden');
+  searchQuery = e.target.value;
+
+    if (!searchQuery.trim().length) return;
+    
+   
+    const whatThis = API.getFilmByKeyword(searchQuery)
+                        .then(make)
+
+};

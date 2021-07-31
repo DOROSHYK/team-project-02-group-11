@@ -7,23 +7,23 @@ import make from './create_card';
 const refs = getRefs();
 const API = new ServerAPI;
 
-refs.inputRef.addEventListener('input', onMagic);
+// refs.inputRef.addEventListener('input', onMagic);
 
 
 
-function onMagic(e) {
-  e.preventDefault();
+// function onMagic(e) {
+//   // e.preventDefault();
   
-  refs.gallery.innerHTML = '';
-  refs.popFilmList.classList.remove('visually-hidden');
-  const searchQuery = e.target.value;
+//   refs.gallery.innerHTML = '';
+//   refs.popFilmList.classList.remove('visually-hidden');
+//   const searchQuery = e.target.value;
 
-    if (!searchQuery.trim().length) return;
+//     if (!searchQuery.trim().length) return;
     
    
-    const whatThis = API.getFilmByKeyword(searchQuery)
-                        .then(make)
+//     const whatThis = API.getFilmByKeyword(searchQuery)
+//                         .then(make)
 
-};
+// };
 
-export {onMagic,}
+// export {onMagic,}
