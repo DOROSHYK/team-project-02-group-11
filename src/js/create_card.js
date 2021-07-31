@@ -16,7 +16,7 @@ export default function createCard(someWords) {
 //             return cardImage(result);
         }
             const refs = getRefs();
-            //refs.popFilmList.classList.add('visually-hidden');
+            refs.popFilmList.classList.add('visually-hidden');
             refs.gallery.insertAdjacentHTML('beforeend', resultImages);
 
 

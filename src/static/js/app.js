@@ -1,4 +1,3 @@
-import MainPage from "./views/main-page.js";
 import Home from "./views/home.js";
 import Library from "./views/library.js";
 
@@ -20,8 +19,7 @@ export const navigateTo = url => {
 
 const router = async () => {
     const routes = [
-        { path: "/", view:MainPage},
-        { path: "/home", view: Home },
+        { path: "/", view: Home },
         { path: "/library", view: Library },
     ];
 
@@ -51,7 +49,7 @@ window.addEventListener("popstate", router);
 
  document.addEventListener("DOMContentLoaded", () => {
     document.body.addEventListener("click", e => {
-        if (e.target.matches("[data-link]")) {
+        if (e.target.matches("[data-library]")) {
             e.preventDefault();
             navigateTo(e.target.href);
         }

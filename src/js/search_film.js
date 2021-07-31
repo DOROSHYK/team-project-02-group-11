@@ -1,19 +1,13 @@
-import { navigateTo } from '../static/js/app.js';
 import getRefs from './get-refs';
 import ServerAPI from './serverAPI';
 import make from './create_card';
 
-let refs = getRefs();
-//const API = new ServerAPI;
+const refs = getRefs();
 
 refs.inputRef.addEventListener('input', onMagic);
-refs.inputRef.addEventListener('focus', (() => {
-  navigateTo('/home');
-  refs.navLinks[1].classList.add('site-nav__link--current');
-}));
 
 const debounce = require('lodash.debounce');
-refs = getRefs();
+
 const API = new ServerAPI;
 
 refs.inputRef.addEventListener('input',  debounce(onMagic, 700));
