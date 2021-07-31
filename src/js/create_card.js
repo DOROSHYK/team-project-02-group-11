@@ -13,9 +13,9 @@ export default function createCard(someWords) {
         const resultImages = someWords.results.map(result => {
             return cardImage(result);
         })
-
-        refs.popFilmList.classList.add('visually-hidden');
-        refs.gallery.insertAdjacentHTML('beforeend', resultImages);
+            const refs = getRefs();
+            //refs.popFilmList.classList.add('visually-hidden');
+            refs.gallery.insertAdjacentHTML('beforeend', resultImages);
             
     }
     

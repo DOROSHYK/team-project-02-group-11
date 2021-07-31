@@ -1,11 +1,6 @@
-const refs = {
-    siteNavigation: document.querySelector('.page-header__navigation'),
-    navLinks: document.querySelectorAll('.header-link'),
-    header: document.querySelector('.header'),
-    headerInputWrap: document.querySelector('.header-input__container'),
-    headerBtnWrap: document.querySelector('.header-buttons__container'),
-};
+import getRefs from './get-refs';
 
+const refs = getRefs();
 
 refs.siteNavigation.addEventListener('click', onHeaderLinkClick);
 
@@ -23,7 +18,7 @@ function onHeaderLinkClick(event) {
             refs.headerInputWrap.classList.add('hide');
         } else {
             removeElementClass()
-          refs.header.classList.add('header-home');  
+            refs.header.classList.add('header-home');
         }
     }
 }
