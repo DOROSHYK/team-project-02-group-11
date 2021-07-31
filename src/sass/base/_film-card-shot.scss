@@ -24,12 +24,7 @@
 
     border-radius: 5px;
   }
-  &-title,
-  &-info,
-  &-rating {
-    @include font;
-    color: #000000;
-  }
+
   &-title {
     @include font;
     text-transform: uppercase;
@@ -59,10 +54,6 @@
 
 @media screen and (min-width: 768px) {
   .filmCardShot {
-    &-thumb {
-      max-width: 294px;
-      margin: 15px;
-    }
     &-poster {
       width: 294px;
     }
@@ -70,9 +61,6 @@
 }
 @media screen and (min-width: 1024px) {
   .filmCardShot {
-    &-thumb {
-      max-width: 274px;
-    }
     &-poster {
       width: 274px;
     }
