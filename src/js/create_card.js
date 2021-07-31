@@ -17,7 +17,9 @@ export default function createCard(someWords) {
             let some = API.getObjectForRender(result); // или одной  строкой?
             return   cardImage(some);
         
-       } )
+
+       } ).join('')
+
     } 
     
         refs.popFilmList.classList.add('visually-hidden');
