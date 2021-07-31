@@ -14,7 +14,7 @@ let searchQuery = '';
 
 
 window.addEventListener('scroll', debounce(() => {
-    
+    const refs = getRefs();
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
     if (clientHeight + scrollTop >= scrollHeight) {
 
@@ -48,7 +48,7 @@ refs.inputRef.addEventListener('input', onMagic);
 
 function onMagic(e) {
   e.preventDefault();
-  
+  const refs = getRefs();
   refs.gallery.innerHTML = '';
   refs.popFilmList.classList.remove('visually-hidden');
   searchQuery = e.target.value;
