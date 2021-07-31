@@ -1,8 +1,8 @@
 import { navigateTo } from '../static/js/app.js';
 import getRefs from './get-refs';
-import genres from './genres.json';
 import ServerAPI from './serverAPI';
 import make from './create_card';
+
 
 
 
@@ -15,6 +15,13 @@ refs.inputRef.addEventListener('focus', (() => {
   refs.navLinks[1].classList.add('site-nav__link--current');
 }));
 
+const debounce = require('lodash.debounce');
+const refs = getRefs();
+const API = new ServerAPI;
+
+refs.inputRef.addEventListener('input',  debounce(onMagic, 700));
+
+
 function onMagic(e) {
 
   e.preventDefault();
@@ -26,8 +33,10 @@ function onMagic(e) {
     if (!searchQuery.trim().length) return;
     
   //  API.keyWord = searchQuery;
-    const whatThis = API.getFilmByKeyword(searchQuery)
-                        .then(make)
+  const whatThis = API.getFilmByKeyword(searchQuery)
+    .then(make);
+  
+ 
 
 };
 

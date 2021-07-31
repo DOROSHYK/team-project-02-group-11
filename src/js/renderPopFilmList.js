@@ -7,12 +7,9 @@ import genres from './genres.json';
 const API = new ServerAPI;
 API.getPopularFilmList().then(renderPopFilms);
 
-export function renderPopFilms(filmData) {
+function renderPopFilms(filmData) {
 
     const dataForRender = filmData.results.map(result => API.getObjectForRender(result));
-
-    
-    console.log(dataForRender);
     const markup = tempFilmCard(dataForRender);
     const refs = getRefs();
     refs.popFilmList.insertAdjacentHTML('afterbegin', markup);
