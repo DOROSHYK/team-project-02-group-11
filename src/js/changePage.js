@@ -6,12 +6,7 @@ refs.siteNavigation.addEventListener('click', onHeaderLinkClick);
 
 function onHeaderLinkClick(event) {
     if (event.target.classList.contains('header-link')) {
-        if (event.target.getAttribute('href') === '/home') {
-            removeElementClass()
-            refs.navLinks[1].classList.add('site-nav__link--current');
-            refs.header.classList.add('header-home');
-            refs.headerBtnWrap.classList.add('hide');
-        } else if (event.target.getAttribute('href') === '/library') {
+       if (event.target.getAttribute('href') === '/library') {
             removeElementClass()
             refs.navLinks[2].classList.add('site-nav__link--current');
             refs.header.classList.add('header-library');
