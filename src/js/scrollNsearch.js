@@ -1,22 +1,39 @@
-
+import getRefs from './get-refs';
+import genres from './genres.json';
 import ServerAPI from './serverAPI';
-import tempFilmCard from '../template/popFilmCard';
-import getRefs from './get-refs.js';
-import { renderPopFilms } from './renderPopFilmList';
-import { onMagic } from './search_film.js';
 import make from './create_card';
-
-const API = new ServerAPI;
-const refs = getRefs();
+import tempFilmCard from '../template/popFilmCard';
 const debounce = require('lodash.debounce');
 
-const searchQuery = refs.inputRef.value;
-console.log(searchQuery);
+const refs = getRefs();
+const API = new ServerAPI;
+const searchQuery = '';
+refs.inputRef.addEventListener('input', onMagic);
+
+
+
+function onMagic(e) {
+  e.preventDefault();
+  
+  refs.gallery.innerHTML = '';
+  refs.popFilmList.classList.remove('visually-hidden');
+  searchQuery = e.target.value;
+
+    if (!searchQuery.trim().length) return;
+    
+   
+    const whatThis = API.getFilmByKeyword(searchQuery)
+                        .then(make)
+
+};
 
 window.addEventListener('scroll', debounce(() => {
     
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
     if (clientHeight + scrollTop >= scrollHeight) {
+
+        console.log(searchQuery);
+
         if (!refs.popFilmList.classList.contains('visually-hidden')) {
             API.page += 1;
             API.getPopularFilmList().then(renderPopFilms);
