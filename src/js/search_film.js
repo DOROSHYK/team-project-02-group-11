@@ -3,11 +3,8 @@ import getRefs from './get-refs';
 import ServerAPI from './serverAPI';
 import make from './create_card';
 
-
-
-
-const refs = getRefs();
-const API = new ServerAPI;
+let refs = getRefs();
+//const API = new ServerAPI;
 
 refs.inputRef.addEventListener('input', onMagic);
 refs.inputRef.addEventListener('focus', (() => {
@@ -16,7 +13,7 @@ refs.inputRef.addEventListener('focus', (() => {
 }));
 
 const debounce = require('lodash.debounce');
-const refs = getRefs();
+refs = getRefs();
 const API = new ServerAPI;
 
 refs.inputRef.addEventListener('input',  debounce(onMagic, 700));
