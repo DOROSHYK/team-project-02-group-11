@@ -1,9 +1,9 @@
 {{#each this}}
-<li class='film-cards__item' data-id={{id}}>
-    <a href="#" class='film-details film-cards__link'>
-        <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="{{title}}" class='film-cards__img' data-id={{id}}>
-        <p class="film-cards__title">{{title}}</p>
-        <p class='film-cards__info'>{{genres}} | {{year}}</p>
+<li class='filmCardShot-thumb' data-id={{id}}>
+    <a href="#" class='filmCardShot-link'>
+        <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="{{title}}" class='filmCardShot-poster' data-id={{id}}>
+        <p class="filmCardShot-title">{{title}}</p>
+        <p class='filmCardShot-info'>{{genres}} | {{year}}</p>
     </a>
 </li>
 {{/each}}

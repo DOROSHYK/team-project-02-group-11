@@ -1,0 +1,26 @@
+.film-cards {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .film-cards {
+    padding-top: 60px;
+    padding-bottom: 50px;
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(2, 294px);
+      grid-auto-rows: 440px;
+      grid-gap: 30px;
+    }
+  }
+}
+@media screen and (min-width: 1024px) {
+  .film-cards__list {
+    grid-template-columns: repeat(3, 274px);
+  }
+}

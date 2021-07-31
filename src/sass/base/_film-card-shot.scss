@@ -1,12 +1,9 @@
-.film-cards {
-  padding-top: 20px;
-  padding-bottom: 40px;
-
-  &__item {
+.filmCardShot {
+  &-thumb {
     width: 100%;
     max-width: 280px;
   }
-  &__link {
+  &-link {
     display: block;
 
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -20,8 +17,7 @@
         1px 4px 6px rgba(0, 0, 0, 0.16);
     }
   }
-
-  &__img {
+  &-poster {
     margin-bottom: 10px;
     width: 280px;
     height: 398px;
@@ -29,64 +25,43 @@
     border-radius: 5px;
   }
 
-  &__title {
+  &-title {
     @include font;
     text-transform: uppercase;
 
     color: $title-color;
   }
-
-  &__info {
+  &-info {
     @include font;
 
     color: $accent-color;
   }
+  &-rating {
+    margin-left: 10px;
+    padding: 1px 10px;
+    background: $accent-color;
+    border-radius: 5px;
+    color: $main-bg-color;
+  }
 }
-
 @media screen and (max-width: 767px) {
-  .film-cards {
-    &__item {
-      &:not(:last-child) {
-        margin-bottom: 20px;
-      }
+  .filmCardShot-thumb {
+    &:not(:last-child) {
+      margin-bottom: 20px;
     }
   }
 }
 
 @media screen and (min-width: 768px) {
-  .container {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
-  .film-cards {
-    padding-top: 60px;
-    padding-bottom: 50px;
-    &__list {
-      @include flex(wrap);
-      width: calc(100%-60px / 2);
-      margin: -15px;
-    }
-    &__item {
-      max-width: 294px;
-      margin: 15px;
-    }
-
-    &__img {
+  .filmCardShot {
+    &-poster {
       width: 294px;
     }
   }
 }
-
 @media screen and (min-width: 1024px) {
-  .film-cards {
-    &__list {
-      @include flex(wrap);
-      width: calc(100%-90px / 3);
-    }
-    &__item {
-      max-width: 274px;
-    }
-    &__img {
+  .filmCardShot {
+    &-poster {
       width: 274px;
     }
   }

@@ -1,14 +1,28 @@
 import getRefs from './get-refs';
-import genres from './genres.json';
 import ServerAPI from './serverAPI';
 import make from './create_card';
 
-
 const refs = getRefs();
-const API = new ServerAPI;
 
 // refs.inputRef.addEventListener('input', onMagic);
 
+
+
+
+const debounce = require('lodash.debounce');
+
+const API = new ServerAPI;
+
+refs.inputRef.addEventListener('input',  debounce(onMagic, 700));
+
+
+function onMagic(e) {
+
+  e.preventDefault();
+  const refs = getRefs();
+  refs.gallery.innerHTML = '';
+  //refs.popFilmList.classList.remove('visually-hidden');
+  const searchQuery = e.target.value;
 
 
 // function onMagic(e) {
@@ -20,9 +34,16 @@ const API = new ServerAPI;
 
 //     if (!searchQuery.trim().length) return;
     
+
    
 //     const whatThis = API.getFilmByKeyword(searchQuery)
 //                         .then(make)
+
+  //  API.keyWord = searchQuery;
+  const whatThis = API.getFilmByKeyword(searchQuery)
+    .then(make);
+  
+
 
 // };
 
