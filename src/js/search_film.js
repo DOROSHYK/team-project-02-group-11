@@ -45,6 +45,6 @@ function onMagic(e) {
   
 
 
-// };
+ };
 
 // export {onMagic,}
