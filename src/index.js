@@ -1,7 +1,7 @@
 import './static/js/app.js';
 import './js/changePage.js';
 
-import LocalStorage from './js/LocaleStorage';
+import LocalStorage from './js/LocalStorage';
 const LS = new LocalStorage;
 LS.setInit();
 import './sass/main.scss';
