@@ -13,6 +13,7 @@ refs.link.addEventListener('click', onCloseBtn)
 
 refs.closeBtn.addEventListener('click', () => {
     refs.modalWindow.classList.add('is-hidden');
+    document.body.style.overflow = 'auto';
 });
 
 
@@ -29,14 +30,16 @@ export function onEscapeClose(event) {
 
     if (event.code === 'Escape') {
     
-     refs.modalWindow.classList.add('is-hidden');
+        refs.modalWindow.classList.add('is-hidden');
+        document.body.style.overflow = 'auto';
     } 
     
 }
 
 window.addEventListener('click', (event) => {
     if (event.target === refs.modalWindow) {
-       refs.modalWindow.classList.add('is-hidden');  
+        refs.modalWindow.classList.add('is-hidden');
+        document.body.style.overflow = 'auto';
     } 
 })
 
