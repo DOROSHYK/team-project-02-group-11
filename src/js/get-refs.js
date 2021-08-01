@@ -9,5 +9,10 @@ export default function getRefs() {
         header: document.querySelector('.header'),
         headerInputWrap: document.querySelector('.header-input__container'),
         headerBtnWrap: document.querySelector('.header-buttons__container'),
+        movieModalInfoContainer: document.querySelector('.movie-info'),
+        movieModal: document.querySelector('.js-movie-backdrop'),
+        footerModal: document.querySelector('.js-footer-backdrop'),
+        footerModalOpener: document.querySelector('.js-open-team-modal'),
+        closeModalButton: document.querySelector('[data-modal-close]')
     }
 }
