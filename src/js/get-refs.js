@@ -13,6 +13,6 @@ export default function getRefs() {
         movieModal: document.querySelector('.js-movie-backdrop'),
         footerModal: document.querySelector('.js-footer-backdrop'),
         footerModalOpener: document.querySelector('.js-open-team-modal'),
-        closeModalButton: document.querySelector('[data-modal-close]')
+        closeModalButton: document.querySelector('[data-modal-close]'),
     }
 }
