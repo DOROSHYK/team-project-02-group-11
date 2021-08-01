@@ -10,7 +10,7 @@ let resultImages;
 
 export default function createCard(someWords) {
 
-    if (someWords.length !== 0) {
+    if (someWords) {
 
 //         const resultImages = someWords.results.map(result => {
 //             return cardImage(result);
