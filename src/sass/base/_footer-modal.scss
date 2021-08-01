@@ -109,6 +109,11 @@
   cursor: pointer;
 }
 
+.modal-close-icon {
+  width: 14px;
+  height: 14px;
+}
+
 .modal-close-button:hover .modal-close-icon,
 .modal-close-button:focus .modal-close-icon {
   fill: $accent-color;
