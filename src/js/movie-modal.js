@@ -13,7 +13,9 @@ function onMovieClick(event) {
 
     if (event.target.dataset.id || event.target.parentNode.dataset.id) {
         refs.movieModal.classList.remove('is-hidden');
+        
         api.getFilmInfoById(event.target.dataset.id).then(api.getObjectForRender).then(appendMarkup);
+        document.body.style.overflow = 'hidden';
     }
 }
 
