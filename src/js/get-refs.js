@@ -10,6 +10,9 @@ export default function getRefs() {
         headerInputWrap: document.querySelector('.header-input__container'),
         headerBtnWrap: document.querySelector('.header-buttons__container'),
         allPage: document.querySelector('body'),
-        buttonTheme: document.querySelector('#theme-switch-toggle')
+        buttonTheme: document.querySelector('.theme-switch__control'),
+        iconTheme: document.querySelector('.theme-switch__track'),
+        iconHideTheme: document.querySelector(".theme-switch__icon_hiden")
+
     }
 }

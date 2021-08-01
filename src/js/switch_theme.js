@@ -7,7 +7,7 @@ const Theme = {
     DARK: 'dark-theme',
 };
 
-document.querySelector('.theme-switch__control').addEventListener('click', switchTheme);
+refs.buttonTheme.addEventListener('click', switchTheme);
 
 
 function switchTheme(e) {   
@@ -15,38 +15,28 @@ function switchTheme(e) {
      if (!e.target.checked){
         refs.allPage.classList.add(Theme.LIGHT);
         refs.allPage.classList.remove(Theme.DARK);
-       localStorage.setItem('Theme', Theme.LIGHT);
+        localStorage.setItem('Theme', Theme.LIGHT);
        
-      document.querySelector(".theme-switch__track").animate([
+       refs.iconTheme.animate(
+        [
           // keyframes
-              {
-                transform: 'translateY(0px)'
-                    },
-                      {
-                transform: 'translateY(25px)'
-                    },
-              {
-                transform: 'translateY(50px)'
-              },
-
-              {
-                transform: 'translateY(100px)'
-                    }
+              { transform: 'translateY(0px)' },
+              { transform: 'translateY(25px)' },
+              { transform: 'translateY(50px)' },
+              { transform: 'translateY(100px)' }
         ], {
-          // timing options
-          duration: 1000,
-        // iterations: Infinity
-      });
-       document.querySelector(".theme-switch__icon_hiden").animate([
-           {
-                transform: 'translateY(0px)'
-         }],{
-          // timing options
-          duration: 1000,
-        // iterations: Infinity
-      })
-         
-       
+              // timing options
+              duration: 1000
+            }
+       );
+       refs.iconHideTheme.animate(
+        [
+              { transform: 'translateY(0px)' }
+        ], {
+              // timing options
+              duration: 1000
+            }
+       ) 
     }
       else {
           
@@ -54,11 +44,8 @@ function switchTheme(e) {
          refs.allPage.classList.remove(Theme.LIGHT);
          localStorage.setItem('Theme', Theme.DARK);
     }
-  savedTheme();
-  
+  savedTheme(); 
 };
-
- 
 
 function savedTheme() {
   const saveTheme = localStorage.getItem('Theme');
