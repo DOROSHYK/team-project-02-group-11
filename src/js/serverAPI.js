@@ -4,17 +4,19 @@ export default class ServerAPI {
         this.APIkey = 'fd6eb8c46328921cf1133ef8e877d946';
         this.baseURL = 'https://api.themoviedb.org/3/';
         this.mediaType = 'movie';
-        this.page = '1';
+        this.page = 1;
         this.language = 'en';
         this.keyWord = '';
         this.genres = genres;
 
-    }
-    getPoularFilmList() {
-        return fetch(`${this.baseURL}trending/all/week?api_key=${this.APIkey}&page=${this.page}&language=${this.language}`)
+         } 
+        // movie  а не all
+    getPopularFilmList() {
+        return fetch(`${this.baseURL}trending/movie/week?api_key=${this.APIkey}&page=${this.page}&language=${this.language}`)
             .then(response => {
-               if (response.ok) return response.json();
-               throw new Error("Error fetching data");
+                if (response.ok) 
+                    return response.json();
+                throw new Error("Error fetching data");
             })
             .catch(err => {
                 console.error("Error: ", err);
@@ -49,24 +51,40 @@ export default class ServerAPI {
     }
     //принимает числовой массив с id жанров, возвращает строковый массив названий жанров
     getGenreById(id) {
-        return id.map(id_genre => this.genres.find(genre => id_genre === genre.id).name)
+       const genreArray = id.map(id_genre => {
+            const genre = this.genres.find(genre => id_genre === genre.id);
+           if (genre === undefined) return;
+                return genre.name;   
+       })
+        if (genreArray.length > 2) {
+            return genreArray.slice(0, 2).join(', ') + ', ' + 'Other';
+        }
+        if (genreArray.includes(undefined)) {
+            return genreArray.join('');
+        } else {
+            return genreArray.join(', ');
+        }
+
     }
     //принимает объект одного фильма в формате, который получен с сервера. Возвращает объект для рендеринга
     //разметки по шаблону. Обїект можно сразу передавать в функцию-шаблонизатор (пример в файле filmCardShot.js).
     // названия перменных в Вашем шаблоне должны совпадать с именами свойств в возвращаемом объекте
+    
     getObjectForRender(filmData) {
         return {
-            poster_path: filmData.poster_path,
-            title: filmData.title,
+            poster_path: filmData.poster_path || filmData.backdrop_path,
+            title: filmData.title || filmData.original_name,
             genres: filmData.genres ?
-                filmData.genres.map(genre => genre.name).join(', ') : this.getGenreById(filmData.genre_ids).join(', '),
-            year: filmData.release_date.slice(0, 4),
+                filmData.genres.map(genre => genre.name).join(', ') : this.getGenreById(filmData.genre_ids), 
+            year: filmData.release_date === undefined ? filmData.first_air_date.slice(0, 4) : filmData.release_date.slice(0, 4),
             vote_average: filmData.vote_average.toFixed(1),
             overview: filmData.overview,
             popularity: filmData.popularity.toFixed(1),
             vote_count: filmData.vote_count,
-            original_title: filmData.original_title
+            original_title: filmData.original_title,
+            id: filmData.id
         }
     }
 
+   
 }
