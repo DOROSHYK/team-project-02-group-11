@@ -71,6 +71,7 @@ export default class ServerAPI {
     // названия перменных в Вашем шаблоне должны совпадать с именами свойств в возвращаемом объекте
     
     getObjectForRender(filmData) {
+        if (!filmData) {return}
         return {
             poster_path: filmData.poster_path || filmData.backdrop_path,
             title: filmData.title || filmData.original_name,
