@@ -2,7 +2,9 @@ import cardTemplate from '../template/filmCardShot.hbs';
 import filmcardModal from '../template/filmcardModal.hbs'
 import ServerAPI from './serverAPI';
 const api = new ServerAPI;
-
+import getRefs from './get-refs';
+const cl = () => console.log(getRefs());
+let a = setTimeout(cl, 1000)
 api.getFilmByKeyword('throne').then(data => {
     const filmData = data.results[0];
     console.log(api.getObjectForRender(filmData));
