@@ -12,11 +12,11 @@ const refs = {
 refs.teamlistTypeBtnsList.addEventListener('click', renderModalMarkup);
 
 function renderModalMarkup(event) {
-  if (event.target.id === 'description') {
+  if (event.target.id === 'description' || event.target.id === 'description-icon') {
       toggleBtnClass();
       appendMarkup(teamSliderTemplate);
     
-  } else if (event.target.id === 'listed') {
+  } else if (event.target.id === 'listed' || event.target.id === 'listed-icon') {
       toggleBtnClass();
       appendMarkup(teamListTemplate);
   }
