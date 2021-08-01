@@ -1,7 +1,7 @@
 import getRefs from './get-refs';
 import ServerAPI from './serverAPI';
 import make from './create_card';
-
+import { startSpin, stopSpin } from './spiner/spiner';
 const refs = getRefs();
 
 // refs.inputRef.addEventListener('input', onMagic);
@@ -17,7 +17,6 @@ refs.inputRef.addEventListener('input',  debounce(onMagic, 700));
 
 
 function onMagic(e) {
-
   e.preventDefault();
   const refs = getRefs();
   refs.gallery.innerHTML = '';
@@ -40,6 +39,7 @@ function onMagic(e) {
 //                         .then(make)
 
   //  API.keyWord = searchQuery;
+  
   const whatThis = API.getFilmByKeyword(searchQuery)
     .then(make);
   

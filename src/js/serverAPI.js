@@ -71,12 +71,13 @@ export default class ServerAPI {
     // названия перменных в Вашем шаблоне должны совпадать с именами свойств в возвращаемом объекте
     
     getObjectForRender(filmData) {
+        if (!filmData) {return}
         return {
             poster_path: filmData.poster_path || filmData.backdrop_path,
             title: filmData.title || filmData.original_name,
             genres: filmData.genres ?
-                filmData.genres.map(genre => genre.name).join(', ') : this.getGenreById(filmData.genre_ids), 
-            year: filmData.release_date === undefined ? filmData.first_air_date.slice(0, 4) : filmData.release_date.slice(0, 4),
+            filmData.genres.map(genre => genre.name).join(', ') : this.getGenreById(filmData.genre_ids), 
+            year: filmData.release_date === undefined ? filmData.first_air_date === undefined ? 'Год не указан' : filmData.first_air_date.slice(0, 4) :  filmData.release_date.slice(0, 4),
             vote_average: filmData.vote_average.toFixed(1),
             overview: filmData.overview,
             popularity: filmData.popularity.toFixed(1),
