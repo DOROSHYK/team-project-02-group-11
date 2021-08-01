@@ -10,7 +10,7 @@ API.getPopularFilmList().then(renderPopFilms);
 function renderPopFilms(filmData) {
 
     const dataForRender = filmData.results.map(result => API.getObjectForRender(result));
-
+    // if (dataForRender.poster_path)
 
 
 
