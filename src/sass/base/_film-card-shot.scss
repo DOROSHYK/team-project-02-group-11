@@ -2,6 +2,9 @@
   &-thumb {
     width: 100%;
     max-width: 280px;
+
+    background-color: $main-bg-color;
+    border-radius: 5px;
   }
   &-link {
     display: block;
@@ -12,8 +15,7 @@
 
     &:hover,
     &:focus {
-      border: 1px solid #eeeeee;
-      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      box-shadow: 0px 1px 3px rgba(117, 117, 117, 1), 0px 4px 4px rgba(0, 0, 0, 0.06),
         1px 4px 6px rgba(0, 0, 0, 0.16);
     }
   }
@@ -22,8 +24,6 @@
     width: 280px;
     height: 398px;
     border-radius: 5px;
-    
-    
   }
 
   &-title {
