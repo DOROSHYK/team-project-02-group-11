@@ -1,35 +1,41 @@
 <article class="film-card ">
-    <div class="img_thumb">
-        <img src="https://image.tmdb.org/t/p/w500/{{poster_path}} " alt="{{title}} poster" />
-    </div>
-    <h3 class="modal-movie-title uppercase">{{title}}</h2>
-    {{!-- <table class="movie-modal-table">
-        <tbody>
-            <tr>
-                <td><span class="modal-movie-stats">Vote / Votes</span></td>
-                <td class="separator-td sep1" width='41px'></td>
-                <td><span class="modal-movie-stats-value">{{vote_average}} </span><span class="modal-movie-stats-value">/
-                        {{vote_count}}</span></td>
-            </tr>
-            <tr>
-                <td><span class="modal-movie-stats">Popularity</span></td>
-                <td class="separator-td sep2" width='53px'></td>
-                <td><span class="modal-movie-stats-value">{{popularity}}</span></td>
-            </tr>
-            <tr>
-                <td><span class="modal-movie-stats">Original Title</span></td>
-                <td class="separator-td sep3" width='39px'></td>
-                <td><span class="modal-movie-stats-value uppercase">{{original_title}}</td>
-            </tr>
-            <tr>
-                <td><span class="modal-movie-stats">Genre</span></td>
-                <td class="separator-td sep4" width='76px'></td>
-                <td><span class="modal-movie-stats-value text-wrap">{{genres}}</span></td>
-            </tr>
-        </tbody>
+    
+        <img class="modal-movie-image" src="https://image.tmdb.org/t/p/w500/{{poster_path}} " alt="{{title}} poster" />
+    
+    <div class="tablet-pc-thumb">
+        <h3 class="modal-movie-title uppercase">{{title}}</h2>
+            <table class="movie-modal-table">
+                <tbody>
+                    <tr>
+                        <td><span class="modal-movie-stats">Vote / Votes</span></td>
+                        {{!-- <td class="separator-td sep1" width='41px'></td> --}}
+                        <td><span class="modal-movie-stats-value vote-accent">{{vote_average}}
+                            </span><span></span>&nbsp/&nbsp<span
+                                class="modal-movie-stats-value vote-total">{{vote_count}}</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modal-movie-stats">Popularity</span></td>
+                        {{!-- <td class="separator-td sep2" width='53px'></td> --}}
+                        <td><span class="modal-movie-stats-value">{{popularity}}</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="modal-movie-stats">Original Title</span></td>
+                        {{!-- <td class="separator-td sep3" width='39px'></td> --}}
+                        <td><span class="modal-movie-stats-value uppercase">{{original_title}}</td>
+                    </tr>
+                    <tr>
+                        <td><span class="modal-movie-stats">Genre</span></td>
+                        {{!-- <td class="separator-td sep4" width='76px'></td> --}}
+                        <td><span class="modal-movie-stats-value text-wrap">{{genres}}</span></td>
+                    </tr>
+                </tbody>
         
-    </table> --}}
-    <div class="modal-list-thumb">
+            </table>
+            <p class="movie-modal-about uppercase">About</p>
+            <p class="movie-modal-about-value">{{overview}}</p>
+    </div>
+    
+    {{!-- <div class="modal-list-thumb">
         <ul class="modal-movie-stats-list">
             <li class="modal-movie-stats-item"><span class="modal-movie-stats">Vote / Votes</span></li>
             <li class="modal-movie-stats-item"><span class="modal-movie-stats">Popularity</span></li>
@@ -44,7 +50,6 @@
             <li class="modal-movie-stats-value-item"><span class="modal-movie-stats-value uppercase">{{original_title}}</span></li>
             <li class="modal-movie-stats-value-item"><span class="modal-movie-stats-value text-wrap">{{genres}}</span></li>
         </ul>
-    </div>
-    <p class="movie-modal-about uppercase">About</p>
-    <p class="movie-modal-about-value">{{overview}}</p>
+    </div> --}}
+    
 </article>
