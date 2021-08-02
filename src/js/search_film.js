@@ -2,6 +2,7 @@ import getRefs from './get-refs';
 import ServerAPI from './serverAPI';
 import make from './create_card';
 import { startSpin, stopSpin } from './spiner/spiner';
+import notification from './notifications.js';
 const refs = getRefs();
 
 // refs.inputRef.addEventListener('input', onMagic);
@@ -23,6 +24,9 @@ function onMagic(e) {
   //refs.popFilmList.classList.remove('visually-hidden');
   const searchQuery = e.target.value;
 
+   if (searchQuery.trim() === '') {
+        return  notification.incorrectRequest();
+    }
 
 // function onMagic(e) {
 //   // e.preventDefault();
