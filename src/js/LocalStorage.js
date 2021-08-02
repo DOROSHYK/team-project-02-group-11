@@ -9,9 +9,9 @@ export default class LocalStorage {
         this.saveAll(films)
     }
     addFilm(filmObjRender) {
+        
         const arr = this.loadAll();
         arr.total.push(filmObjRender);
-        console.log(arr)
         this.saveAll(arr);
     }
     setQueue() {
@@ -34,7 +34,11 @@ export default class LocalStorage {
     }
     setWatched() {
         const films = this.loadAll();
+        console.log('все')
+        console.log(films);
         const currentFilm = films.total[films.total.length - 1];
+        
+        console.log(currentFilm);
         if (films.watched.some(film => film.id === currentFilm.id)) {
             console.log('этот фильм уже есть в коллекции');
             console.log(films)
