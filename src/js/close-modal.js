@@ -1,14 +1,32 @@
 import getRefs from './get-refs';
-
+const refsMod = getRefs();
 
 const refs = {
-    closeBtn: document.querySelector('[data-modal-close]'),
-  modalWindow: document.querySelector('[data-modal]'),
-    link: document.querySelector('[data-modal-open]'),
-//   modal: document.querySelector('.footer-modal'),
-}
+        closeBtn: document.querySelector('[data-modal-close]'),
+    modalWindow: document.querySelector('[data-modal]'),
+        link: document.querySelector('[data-modal-open]'),
+    //   modal: document.querySelector('.footer-modal'),
+};
 
-refs.link.addEventListener('click', onCloseBtn)
+
+// FOR FOOTER MODAL
+refsMod.footerModalOpener.addEventListener('click',onOpenTeamModal);
+
+function onOpenTeamModal(){
+    refsMod.footerModal.classList.remove('is-hidden');
+    refsMod.footerModalOpener.removeEventListener('click',onOpenTeamModal);
+};
+
+refsMod.footerCloseModalBtn.addEventListener('click', onCloseFooterBtn);
+
+function onCloseFooterBtn(){
+    refsMod.footerModal.classList.add('is-hidden');
+    refsMod.footerCloseModalBtn.removeEventListener('click', onCloseFooterBtn);
+};
+// FOR FOOTER MODAL
+
+// refs.link.addEventListener('click', onCloseBtn)
+
 
 
 refs.closeBtn.addEventListener('click', () => {
