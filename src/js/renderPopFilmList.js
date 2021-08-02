@@ -18,11 +18,7 @@ function renderPopFilms(filmData) {
     const refs = getRefs();
 
     refs.popFilmList.insertAdjacentHTML('afterbegin', markup);
-refs.footer.classList.remove('is-fixed');
-
-    refs.popFilmList.insertAdjacentHTML('beforeend', markup);
-// refs.footer.classList.remove('is-fixed');
-
+//refs.footer.classList.remove('is-fixed');
 }
 
 export {renderPopFilms }
