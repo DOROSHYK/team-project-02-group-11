@@ -9,26 +9,26 @@ const refs = getRefs();
 const API = new ServerAPI;
 let currentID = null;
 
-refs.mainRef.addEventListener('click', onChangeMyLibrary);
+// refs.mainRef.addEventListener('click', onChangeMyLibrary);
 refs.headerBtnWrap.addEventListener('click', onMyLibrary);
 
-function onChangeMyLibrary(e) {
-  const refs = getRefs();
-  const currentEl = e.target.parentNode;
-  const currentID = currentEl.parentNode.dataset.id;
+// function onChangeMyLibrary(e) {
+//   const refs = getRefs();
+//   const currentEl = e.target.parentNode;
+//   const currentID = currentEl.parentNode.dataset.id;
 
-  API.getFilmInfoById(currentID).then(saveMe);
+//   API.getFilmInfoById(currentID).then(saveMe);
 
-  function saveMe(some) {
+//   function saveMe(some) {
     
-    const newFilm = API.getObjectForRender(some);
-    loc.addFilm(newFilm);
+//     const newFilm = API.getObjectForRender(some);
+//     loc.addFilm(newFilm);
 
-    if (e.target.classList.contains('add-to-watched')) loc.setWatched();
-    else if (e.target.classList.contains('add-to-queue')) loc.setQueue();
+//     if (e.target.classList.contains('add-to-watched')) loc.setWatched();
+//     else if (e.target.classList.contains('add-to-queue')) loc.setQueue();
 
-  }
-};
+//   }
+// };
 
 function onMyLibrary(e) {
   const refs = getRefs();
@@ -36,7 +36,8 @@ function onMyLibrary(e) {
   let someDate = null;
 
   if (e.target.textContent === 'Watched') {
-      someDate = loc.getWatched();
+    someDate = loc.getWatched();
+    console.log(someDate);
   }
   else if (e.target.textContent === 'Queue') {
       someDate = loc.getQueue();

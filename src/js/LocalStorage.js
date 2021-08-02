@@ -1,3 +1,4 @@
+import toastr from 'toastr';
 import notification from './notifications.js';
 
 export default class LocalStorage {

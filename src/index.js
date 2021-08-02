@@ -3,7 +3,7 @@ import './js/changePage.js';
 
 import LocalStorage from './js/LocalStorage';
 const LS = new LocalStorage;
-LS.setInit();
+LS.loadAll() || LS.setInit();
 import './sass/main.scss';
 import './js/close-modal.js';
 import './js/serverAPI.js';
