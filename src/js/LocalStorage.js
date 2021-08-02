@@ -1,3 +1,5 @@
+import notification from './notifications.js';
+
 export default class LocalStorage {
     
     setInit() {
@@ -18,7 +20,7 @@ export default class LocalStorage {
         const films = this.loadAll();
         const currentFilm = films.total[films.total.length - 1];
         if (films.queue.some(film => film.id === currentFilm.id)) {
-            console.log('этот фильм уже есть в коллекции');
+            notification.addToQueueError();
             console.log(films)
         return
          }
@@ -26,7 +28,7 @@ export default class LocalStorage {
         films.queue.push(currentFilm);
         
         this.saveAll(films)
-        console.log('добавлено в коллекцию');
+        notification.addToQueue();
         console.log(films)
     }
     getQueue() {
@@ -40,7 +42,7 @@ export default class LocalStorage {
         
         console.log(currentFilm);
         if (films.watched.some(film => film.id === currentFilm.id)) {
-            console.log('этот фильм уже есть в коллекции');
+            notification.addToWatchedError();
             console.log(films)
         return
          }
@@ -48,7 +50,7 @@ export default class LocalStorage {
         films.watched.push(currentFilm);
         
         this.saveAll(films)
-        console.log('добавлено в коллекцию');
+        notification.addToWatched();
         console.log(films)
     }
     getWatched() {

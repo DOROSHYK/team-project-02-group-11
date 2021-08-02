@@ -1,4 +1,5 @@
 import genres from './genres.json';
+import notification from './notifications.js';
 export default class ServerAPI {
     constructor() {
         this.APIkey = 'fd6eb8c46328921cf1133ef8e877d946';
@@ -18,8 +19,8 @@ export default class ServerAPI {
                     return response.json();
                 throw new Error("Error fetching data");
             })
-            .catch(err => {
-                console.error("Error: ", err);
+            .catch(() => {
+                notification.fetchError();
             }); 
     }
     getFilmByKeyword(keyWord) {
@@ -29,8 +30,8 @@ export default class ServerAPI {
                if (response.ok) return response.json();
                throw new Error("Error fetching data");
             })
-            .catch(err => {
-                console.error("Error: ", err);
+            .catch(() => {
+                notification.fetchError();
             }); 
     }
     getFilmInfoById(id) {
@@ -39,15 +40,15 @@ export default class ServerAPI {
                if (response.ok) return response.json();
                throw new Error("Error fetching data");
             })
-            .catch(err => {
-                console.error("Error: ", err);
+            .catch(() => {
+                notification.fetchError();
             }); 
     }
     // возвращает массив объектов типа {id: 27, name: "Horror"} - соответсвий жанров их id
     getGenresList() {
         return fetch(`${this.baseURL}genre/${this.mediaType}/list?api_key=${this.APIkey}&language=${this.language}`)
             .then(res => res.json())
-            .catch((error) => console.log(error))
+            .catch(() => notification.fetchError())
     }
     //принимает числовой массив с id жанров, возвращает строковый массив названий жанров
     getGenreById(id) {
