@@ -23,6 +23,9 @@ import './js/search_film';
 import './js/movie-modal.js';
 
 import './js/switch_theme';
+
+import './js/to-top-btn';
+
 import './js/my_gallery'
 
 
