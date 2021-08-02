@@ -26,6 +26,8 @@ import './js/switch_theme';
 
 import './js/to-top-btn';
 
+import './js/my_gallery'
+
 
 
 
