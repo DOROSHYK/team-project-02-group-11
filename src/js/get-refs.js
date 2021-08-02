@@ -19,7 +19,13 @@ export default function getRefs() {
         allPage: document.querySelector('body'),
         buttonTheme: document.querySelector('.theme-switch__control'),
         iconTheme: document.querySelector('.theme-switch__track'),
-        iconHideTheme: document.querySelector(".theme-switch__icon_hiden")
+        iconHideTheme: document.querySelector(".theme-switch__icon_hiden"),
+
+
+        toTopBtn: document.querySelector('.to-top-js'),
+        ancor: document.querySelector('.page-header__navigation'),
+        clientGallery: document.querySelector(".filters-list"),
+        mainRef: document.querySelector("#app"),
 
 
     }
