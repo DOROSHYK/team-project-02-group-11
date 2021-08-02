@@ -1,15 +1,18 @@
 import getRefs from './get-refs';
 import Local from './LocalStorage';
 import ServerAPI from './serverAPI';
-
+import cardImage from '../template/filmCardShot';
 const loc = new Local();
 const refs = getRefs();
 const API = new ServerAPI;
 
-document.querySelector('#app').addEventListener('click', onChangeMyLibrary);
+let currentID = null;
+
+refs.mainRef.addEventListener('click', onChangeMyLibrary);
+refs.headerBtnWrap.addEventListener('click', onMyLibrary);
 
 function onChangeMyLibrary(e) {
-  e.preventDefault();
+  const refs = getRefs();
   const currentEl = e.target.parentNode;
   const currentID = currentEl.parentNode.dataset.id;
 
@@ -26,4 +29,19 @@ function onChangeMyLibrary(e) {
 
   }
 
-}
+};
+
+function onMyLibrary(e) {
+  const refs = getRefs();
+  console.log(e.target);
+  const someDate = loc.getWatched();
+  console.log(e.target.nodeName);
+
+  const resultLibrary = someDate.map(el => cardImage(el)).join('');
+
+  if (e.target.nodeName === 'BUTTON') {
+      refs.clientGallery.insertAdjacentHTML('beforeend', resultLibrary);
+  }
+
+};
+
