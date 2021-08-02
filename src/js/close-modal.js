@@ -28,6 +28,7 @@ function onCloseFooterBtn(){
 // refs.link.addEventListener('click', onCloseBtn)
 
 
+
 refs.closeBtn.addEventListener('click', () => {
     refs.modalWindow.classList.add('is-hidden');
     document.body.style.overflow = 'auto';
