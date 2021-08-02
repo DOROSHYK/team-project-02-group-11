@@ -22,7 +22,7 @@ export default function createCard(someWords) {
     if (someWords.total_results === 0) {
       notification.incorrectRequest();
     } else {
-        toastr["success"](`Succes. Found ${someWords.total_results} movies`);
+        toastr["success"](`Succes. Found ${someWords.total_results} films`);
     }
     } 
     
