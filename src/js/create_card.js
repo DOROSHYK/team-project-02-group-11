@@ -2,7 +2,8 @@
 import cardImage from '../template/filmCardShot';
 import ServerAPI from './serverAPI';
 import getRefs from './get-refs';
-
+import toastr from 'toastr';
+import notification from './notifications.js';
 
 const API = new ServerAPI;
 
@@ -16,7 +17,13 @@ export default function createCard(someWords) {
     resultImages = someWords.results.map(result => {         
         let some = API.getObjectForRender(result); // или одной  строкой?
             return   cardImage(some);
-       } ).join('')
+    }).join('')
+    
+    if (someWords.total_results === 0) {
+      notification.incorrectRequest();
+    } else {
+        toastr["success"](`Succes. Found ${someWords.total_results} movies`);
+    }
     } 
     
 export {createCard }

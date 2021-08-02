@@ -3,9 +3,10 @@ import ServerAPI from "./serverAPI";
 const api = new ServerAPI;
 const LS = new LocalStorage;
 
+
 const isBtnFromShortCard = (e, className) => {
     if (!className.includes('film__button')) { return Promise.resolve()}
-    return api.getFilmInfoById(+e.path[2].dataset.id).then(api.getObjectForRender)
+    return api.getFilmInfoById(e.path[2].dataset.id).then(api.getObjectForRender)
         .then(LS.addFilm.bind(LS));    
 }
 

@@ -13,7 +13,8 @@ function onMyLibrary(e) {
   refs.clientGallery.innerHTML = '';
   
   if (e.target.textContent === 'Watched') {
-      someDate = loc.getWatched();
+    someDate = loc.getWatched();
+    console.log(someDate);
   }
   else if (e.target.textContent === 'Queue') {
       someDate = loc.getQueue();
