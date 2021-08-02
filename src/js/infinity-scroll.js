@@ -19,32 +19,22 @@ window.addEventListener('scroll', debounce(() => {
     const refs = getRefs();
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
     if (clientHeight + scrollTop >= scrollHeight) {
-
+        refs.toTopBtn.classList.remove('visually-hidden');
         if (!refs.popFilmList.classList.contains('visually-hidden')) {
              
             API.page += 1;
             API.getPopularFilmList().then(renderPopFilms);
-                
+            
         } else if (refs.popFilmList.classList.contains('visually-hidden')) {
 
             API.page += 1;
             
             API.getFilmByKeyword(searchQuery)
                 .then(make);
-            
-
-//         API.page += 1;
-//         API.getPopularFilmList().then(renderFilms);
-//         function renderFilms(filmData) {
-//             const dataForRender = filmData.results.map(result => API.getObjectForRender(result));
-//             const markup = tempFilmCard(dataForRender);
-//             const refs = getRefs();
-//             refs.popFilmList.insertAdjacentHTML('afterbegin', markup);
-//             console.log(API.page);
 
         };
     }
-}, 1000));
+}, 1500));
 
 refs.inputRef.addEventListener('input', onMagic);
 

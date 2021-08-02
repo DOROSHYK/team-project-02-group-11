@@ -8,7 +8,7 @@ import './sass/main.scss';
 import './js/close-modal.js';
 import './js/serverAPI.js';
 
-import './js/filmCardShot.js';
+
 import './js/team-view-switch.js';
 
 import './js/renderPopFilmList';
@@ -17,13 +17,17 @@ import './js/renderPopFilmList';
 import './js/infinity-scroll.js';
 
 
-import './js/filmCardShot.js';
+// import './js/filmCardShot.js';
 import './js/search_film';
 
 import './js/movie-modal.js';
 
-import './js/switch_theme'
+import './js/switch_theme';
 
+import './js/to-top-btn';
 
+import './js/my_gallery';
+
+import './js/storageEventListeners';
 
 

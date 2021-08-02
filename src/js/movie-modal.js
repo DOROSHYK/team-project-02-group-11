@@ -1,10 +1,10 @@
 import getRefs from './get-refs';
 import movieCardTemplate from '../template/filmcardModal.hbs';
 import Api from '../js/serverAPI';
-
+import LocalStorage from '../js/LocalStorage';
 const refs = getRefs();
 const api = new Api();
-
+const LS = new LocalStorage;
 document.getElementById('app').addEventListener('click', onMovieClick);
 
 function onMovieClick(event) {
@@ -13,8 +13,11 @@ function onMovieClick(event) {
 
     if (event.target.dataset.id || event.target.parentNode.dataset.id) {
         refs.movieModal.classList.remove('is-hidden');
-        
-        api.getFilmInfoById(event.target.dataset.id).then(api.getObjectForRender).then(appendMarkup);
+        api.getFilmInfoById(event.target.dataset.id).then(data => {
+            const objRender = api.getObjectForRender(data);
+            LS.addFilm(objRender);
+            return objRender
+        }).then(appendMarkup);
         document.body.style.overflow = 'hidden';
     }
 }
