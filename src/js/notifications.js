@@ -26,7 +26,7 @@ export default {
     // },
 
     incorrectRequest() {
-        toastr["error"]("Search result not successful. Enter the correct movie name and try again!");
+        toastr["error"]("Search result not successful. Enter the correct request!");
     },
 
     fetchError() {
@@ -34,17 +34,17 @@ export default {
     },
 
     addToWatched() {
-        toastr["info"]("This movie added to Watched");
+        toastr["info"]("This film added to Watched");
     },
 
     addToQueue() {
-        toastr["info"]("This movie added to Queue");
+        toastr["info"]("This film added to Queue");
     },
 
     addToWatchedError() {
-        toastr["warning"]("This movie has already been added to Watched");
+        toastr["warning"]("This film has already been added to Watched");
     },
     addToQueueError() {
-        toastr["warning"]("This movie has already been added to Queue");
+        toastr["warning"]("This film has already been added to Queue");
     },
 }
