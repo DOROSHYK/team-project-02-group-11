@@ -27,7 +27,7 @@ export default function getRefs() {
         ancor: document.querySelector('.page-header__navigation'),
         clientGallery: document.querySelector(".filters-list"),
         mainRef: document.querySelector("#app"),
-
+        library: document.getElementById('library-list'),
 
     }
 }
