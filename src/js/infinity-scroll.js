@@ -6,11 +6,11 @@ import { renderPopFilms } from './renderPopFilmList';
 import make from './create_card';
 import { startSpin, stopSpin } from './spiner/spiner';
 import notification from './notifications.js';
-// import * as _debounce from 'lodash.debounce';
+import * as _debounce from 'lodash.debounce';
 
 const API = new ServerAPI;
 const refs = getRefs();
-const debounce = require('lodash.debounce');
+// const debounce = require('lodash.debounce');
 
 let searchQuery = '';
 
@@ -35,7 +35,7 @@ window.addEventListener('scroll',() => {
     }
 });
 
-refs.inputRef.addEventListener('input',  debounce(onMagic,  1500));
+refs.inputRef.addEventListener('input',  _debounce(onMagic,  1500));
 
 function onMagic(e) {
     //e.preventDefault();
