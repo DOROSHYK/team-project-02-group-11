@@ -1,7 +1,7 @@
 import getRefs from './get-refs';
 import movieCardTemplate from '../template/filmcardModal.hbs';
-import Api from '../js/serverAPI';
-import LocalStorage from '../js/LocalStorage';
+import Api from './serverAPI';
+import LocalStorage from './LocalStorage';
 const refs = getRefs();
 const api = new Api();
 const LS = new LocalStorage;
