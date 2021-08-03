@@ -28,7 +28,7 @@ export default function getRefs() {
         clientGallery: document.querySelector(".clients-lib"),
         mainRef: document.querySelector("#app"),
         containerLib: document.querySelector("main"),
-
-
+        cardFilBtnWrap: document.querySelector('.card-film-btn__container'),
+        movieModalBtn: document.querySelector('.add-buttons-list'),
     }
 }

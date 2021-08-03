@@ -42,6 +42,7 @@ export default class LocalStorage {
         const films = this.loadAll();
         films.queue.forEach((film, idx, arr) => film.id === id ? arr.splice(idx, 1) : null);
         this.saveAll(films);
+        notification.removeFromQueue();
     }
     setWatched() {
         const films = this.loadAll();
@@ -65,7 +66,7 @@ export default class LocalStorage {
         const films = this.loadAll();
         films.watched.forEach((film, idx, arr) => film.id === id ? arr.splice(idx, 1) : null);
         this.saveAll(films);
-
+        notification.removeFromWatched();
     }
     searchById(id) {
         return this.loadAll().total.find(film => film.id === id)
