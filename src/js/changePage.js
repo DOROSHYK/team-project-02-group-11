@@ -13,7 +13,7 @@ function onHeaderLinkClick(event) {
             refs.header.classList.add('header-library');
             refs.headerInputWrap.classList.add('hide');
            
-           loadLibrary();
+          // loadLibrary();
 
         } else {
             removeElementClass()
