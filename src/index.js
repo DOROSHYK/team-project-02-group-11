@@ -18,7 +18,7 @@ import './js/infinity-scroll.js';
 
 
 // import './js/filmCardShot.js';
-import './js/search_film';
+//import './js/search_film';
 
 import './js/movie-modal.js';
 
