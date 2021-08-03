@@ -11,17 +11,36 @@ refs.headerBtnWrap.addEventListener('click', onMyLibrary);
 function onMyLibrary(e) {
   refs = getRefs();
   refs.clientGallery.innerHTML = '';
-  
-  if (e.target.textContent === 'Watched') {
-    someDate = loc.getWatched();
-    console.log(someDate);
-  }
-  else if (e.target.textContent === 'Queue') {
+  console.log(someDate);
+
+  if (e.target.textContent === 'Queue') {
       someDate = loc.getQueue();
   }
+ 
+    let resultLibrary = someDate.map(el => cardImage(el)).join(''); 
+    refs.clientGallery.insertAdjacentHTML('beforeend', resultLibrary);
 
-  const resultLibrary = someDate.map(el => cardImage(el)).join('');
-  refs.clientGallery.insertAdjacentHTML('beforeend', resultLibrary);
-  }
+};
+
+export default function onLoadLibrary() {
+
+  refs = getRefs();
+  console.log('worked');
+  console.log(someDate);
+
+  let resultLibrary = someDate.map(el => cardImage(el)).join('');
+
+  console.log(resultLibrary);
+  
+  document.querySelector('#app').insertAdjacentHTML('beforeend', resultLibrary);
+  
+
+};
+
+
+
+
+
+
 
 
