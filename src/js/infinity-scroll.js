@@ -5,6 +5,7 @@ import getRefs from './get-refs.js';
 import { renderPopFilms } from './renderPopFilmList';
 import make from './create_card';
 import { startSpin, stopSpin } from './spiner/spiner';
+import notification from './notifications.js';
 
 const API = new ServerAPI;
 const refs = getRefs();
@@ -43,7 +44,7 @@ function onMagic(e) {
         // stopSpin();
     searchQuery = e.target.value;
 
-    if (!searchQuery.trim().length)  return;
+    if (!searchQuery.trim().length)  return notification.incorrectRequest();;
     stopSpin();
    
     API.getFilmByKeyword(searchQuery)
