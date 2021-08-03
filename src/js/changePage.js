@@ -2,6 +2,9 @@ import getRefs from './get-refs';
 import Local from './LocalStorage';
 import cardImage from '../template/filmCardShot';
 
+//import loadLibrary from './my_gallery';
+
+
 const refs = getRefs();
 
 refs.siteNavigation.addEventListener('click', onHeaderLinkClick);
@@ -17,6 +20,7 @@ let someDate = loc.getWatched();
             refs.navLinks[2].classList.add('site-nav__link--current');
             refs.header.classList.add('header-library');
             refs.headerInputWrap.classList.add('hide');
+
             if (event.target.textContent === 'Watched') {
                 someDate = loc.getWatched();
             } else if (event.target.textContent === 'Queue') {
@@ -28,6 +32,7 @@ let someDate = loc.getWatched();
                refs.library.insertAdjacentHTML('beforeend', resultLibrary);
            }, 0)
            
+
         } else {
             removeElementClass()
             refs.header.classList.add('header-home');

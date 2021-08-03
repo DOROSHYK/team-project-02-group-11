@@ -6,10 +6,11 @@ import { renderPopFilms } from './renderPopFilmList';
 import make from './create_card';
 import { startSpin, stopSpin } from './spiner/spiner';
 import notification from './notifications.js';
+import { debounce } from 'lodash';
 
 const API = new ServerAPI;
 const refs = getRefs();
-const debounce = require('lodash.debounce');
+// const debounce = require('lodash.debounce');
 
 let searchQuery = '';
 
