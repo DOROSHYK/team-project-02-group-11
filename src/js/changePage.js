@@ -1,5 +1,5 @@
 import getRefs from './get-refs';
-import on from './my_gallery';
+import loadLibrary from './my_gallery';
 
 const refs = getRefs();
 
@@ -13,7 +13,7 @@ function onHeaderLinkClick(event) {
             refs.header.classList.add('header-library');
             refs.headerInputWrap.classList.add('hide');
            
-           on();
+           loadLibrary();
 
         } else {
             removeElementClass()
