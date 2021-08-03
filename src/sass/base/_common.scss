@@ -58,5 +58,5 @@ img[alt]:after {
   background-size: cover;
   background-repeat: no-repeat;
   color: transparent;
-  content: attr(alt);
+  content: "";
 }
