@@ -9,52 +9,52 @@
 // }
 
 .toast.toast-info {
-    background-color: rgba(0, 0, 0, 0.56);
+    background-color: rgb(0, 0, 0);
     text-align: center;
 }
 
 .toast-info .toast-message {
    color: $accent-color;
    font-family: inherit;
-   font-weight: 400;
-   font-size: 14px;
+   font-weight: 500;
+   font-size: 16px;
    
 }
 
 .toast.toast-error {
     top: 160px;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     text-align: center;
 }
 
 .toast-error .toast-message {
     color: #FF001B;
     font-family: inherit;
-    font-weight: 400;
-    font-size: 14px;
+    font-weight: 500;
+    font-size: 16px;
 }
 
 .toast.toast-success {
     top: 160px;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     text-align: center;
 }
 
 .toast-success .toast-message {
     color: $accent-color;
     font-family: inherit;
-    font-weight: 400;
-    font-size: 14px;
+    font-weight: 500;
+    font-size: 16px;
 }
 
 .toast.toast-warning {
-    background-color: rgba(0, 0, 0, 0.56);
+    background-color: rgb(0, 0, 0);
     text-align: center;
 }
 
 .toast-warning .toast-message {
     color: #FF001B;
     font-family: inherit;
-    font-weight: 400;
-    font-size: 14px;
+    font-weight: 500;
+    font-size: 16px;
 }

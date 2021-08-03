@@ -21,6 +21,7 @@ export default class ServerAPI {
             })
             .catch(() => {
                 notification.fetchError();
+                //console.log(err);
             }); 
     }
     getFilmByKeyword(keyWord) {
@@ -34,7 +35,8 @@ export default class ServerAPI {
             })
             .catch(() => {
                 notification.fetchError();
-            }); 
+                //console.log(err);
+            });
     }
     getFilmInfoById(id) {
         if(!id){return}
@@ -43,9 +45,10 @@ export default class ServerAPI {
                if (response.ok) return response.json();
                throw new Error("Error fetching data");
             })
-            .catch(() => {
-                notification.fetchError();
-            }); 
+            .catch((err) => {
+                //notification.fetchError();
+                console.log(err);
+            });
     }
     // возвращает массив объектов типа {id: 27, name: "Horror"} - соответсвий жанров их id
     getGenresList() {

@@ -13,16 +13,18 @@ export default function createCard(someWords) {
     if (!someWords) return
     const refs = getRefs();
     refs.popFilmList.classList.add('visually-hidden');
-    refs.gallery.insertAdjacentHTML('beforeend', resultImages);
-    resultImages = someWords.results.map(result => {         
+   
+    resultImages = someWords.results.map(result => {
         let some = API.getObjectForRender(result); // или одной  строкой?
-            return   cardImage(some);
-    }).join('')
+        return cardImage(some);
+    }).join('');
+
+    refs.gallery.insertAdjacentHTML('beforeend', resultImages);
     
     if (someWords.total_results === 0) {
       notification.incorrectRequest();
     } else {
-        toastr["success"](`Succes. Found ${someWords.total_results} movies`);
+        toastr["success"](`Succes. Found ${someWords.total_results} films`);
     }
     } 
     
