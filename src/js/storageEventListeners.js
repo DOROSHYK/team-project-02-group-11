@@ -1,5 +1,5 @@
-import LocalStorage from "./localStorage";
-import ServerAPI from "./serverAPI";
+import LocalStorage from './localStorage';
+import ServerAPI from './serverAPI';
 const api = new ServerAPI;
 const LS = new LocalStorage;
 
