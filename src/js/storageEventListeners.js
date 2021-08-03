@@ -22,5 +22,21 @@ const onQueue = (e) => {
     isBtnFromShortCard(e, className).then(LS.setQueue.bind(LS));
 }
 
+const onRemoveWatched = (e) => {
+    const className = String(e.target.className);
+    if (!className.includes('remove-from-watched')) { return }
+    const id = e.path[2].dataset.id || LS.getLastFilm().id;
+    LS.removeFromWatched(id);
+}
+const onRemoveQueue = (e) => {
+    const className = String(e.target.className);
+    if (!className.includes('remove-from-queue')) { return }
+    const id = e.path[2].dataset.id || LS.getLastFilm().id;
+    LS.removeFromQueue(id);
+}
+
+
 document.body.addEventListener('click', onWatched);
 document.body.addEventListener('click', onQueue);
+document.body.addEventListener('click', onRemoveWatched);
+document.body.addEventListener('click', onRemoveQueue);

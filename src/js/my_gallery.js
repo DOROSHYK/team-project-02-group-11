@@ -43,7 +43,13 @@ function onMyLibrary(e) {
       someDate = loc.getQueue();
   }
 
-  const resultLibrary = someDate.map(el => cardImage(el)).join('');
+  const resultLibrary = someDate.map(el => {
+    let genresArr = el.genres.split(', ');
+    if (genresArr.length > 2) {
+      el.genres = genresArr.splice(0, 2).join(', ') + ", others"
+    }
+    return cardImage(el)
+  }).join('');
   refs.clientGallery.insertAdjacentHTML('beforeend', resultLibrary);
   }
 
