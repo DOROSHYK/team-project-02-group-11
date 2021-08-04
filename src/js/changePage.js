@@ -2,16 +2,37 @@ import getRefs from './get-refs';
 import Local from './LocalStorage';
 import cardImage from '../template/filmCardShot';
 
-//import loadLibrary from './my_gallery';
-
-
-const refs = getRefs();
+ const refs = getRefs();
 
 refs.siteNavigation.addEventListener('click', onHeaderLinkClick);
 
 const loc = new Local();
 
 let someDate = loc.getWatched();
+
+const removeBtnsTextContent = async () => {
+                   
+                   console.log(1)
+                   getRefs().addToQueueBtnsFilmCard.forEach((btn) => {
+                       btn.textContent = 'Remove queue';
+                   });
+                   getRefs().addToWatchedBtnsFilmCard.forEach((btn) => {
+                       btn.textContent = 'Remove watched';
+                   });
+};
+               
+export default function renderLibraryPage(date) {
+    
+    getRefs().library.innerHTML = '';
+               
+    const resultLibrary = date.map(el => cardImage(el)).join('');
+    getRefs().library.insertAdjacentHTML('beforeend', resultLibrary);
+             
+    getRefs().addToQueueBtnModal.textContent = 'Remove queue';
+    getRefs().addToWatchedBtnModal.textContent = 'Remove watched';
+               
+    removeBtnsTextContent();
+}
 
  function onHeaderLinkClick(event) {
     if (event.target.classList.contains('header-link')) {
@@ -27,22 +48,7 @@ let someDate = loc.getWatched();
                 someDate = loc.getQueue();
             }
            setTimeout(() => {
-               const refs = getRefs();
-               const resultLibrary = someDate.map(el => cardImage(el)).join('');
-               refs.library.insertAdjacentHTML('beforeend', resultLibrary);
-             
-               refs.addToQueueBtnModal.textContent = 'Remove queue';
-               refs.addToWatchedBtnModal.textContent = 'Remove watched';
-               setTimeout(() => {
-                   const refs = getRefs();
-                   
-                   refs.addToQueueBtnsFilmCard.forEach((btn) => {
-                       btn.textContent = 'Remove queue';
-                   });
-                   refs.addToWatchedBtnsFilmCard.forEach((btn) => {
-                       btn.textContent = 'Remove watched';
-                   });
-                }, 0)
+               renderLibraryPage(someDate);   
            }, 0)
            
 
