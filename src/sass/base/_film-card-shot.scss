@@ -9,8 +9,6 @@
   &-link {
     display: block;
 
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
     cursor: pointer;
   }
   &-poster {
@@ -25,11 +23,13 @@
     text-transform: uppercase;
 
     color: $title-color;
+    transition: padding-left $animation;
   }
   &-info {
     @include font;
 
     color: $accent-color;
+    transition: padding-left $animation, padding-bottom $animation;
   }
   &-rating {
     margin-left: 10px;
@@ -58,6 +58,28 @@
   .filmCardShot {
     &-poster {
       width: 274px;
+    }
+
+    &-link {
+      transition: box-shadow $animation, transform $animation, background-color $animation,
+        border-radius $animation, padding-bottom $animation, padding-right $animation,
+        padding-top $animation, padding-left $animation width $animation, height $animation; //all $animation; - not work properly
+
+      &:hover,
+      &:focus {
+        width: 294px;
+
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        transform: translateX(-10px) translateY(-10px);
+
+        background-color: $main-bg-color;
+        border-radius: 5px;
+        box-shadow: 0px 1px 3px rgba(117, 117, 117, 1), 0px 4px 4px rgba(0, 0, 0, 0.06),
+          1px 4px 6px rgba(0, 0, 0, 0.16);
+      }
     }
   }
 }
