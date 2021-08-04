@@ -8,7 +8,6 @@ refs.siteNavigation.addEventListener('click', onHeaderLinkClick);
 
 const loc = new Local();
 
-let someDate = loc.getWatched();
 
 // const removeBtnsTextContent = async () => {
                    
@@ -40,6 +39,7 @@ export default function renderLibraryPage(date) {
             refs.navLinks[2].classList.add('site-nav__link--current');
             refs.header.classList.add('header-library');
             refs.headerInputWrap.classList.add('hide');
+             let someDate = loc.getWatched();
 
             if (loc.getWatched().length === 0 && loc.getQueue().length > 0) {
                 someDate = loc.getQueue();
