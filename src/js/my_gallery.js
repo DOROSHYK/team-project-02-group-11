@@ -33,6 +33,7 @@ refs.headerBtnWrap.addEventListener('click', onMyLibrary);
 function onMyLibrary(e, remove) {
   
   // if(!document.URL.includes('library')) {return}
+  //new
   const refs = getRefs();
   refs.clientGallery.innerHTML = '';
   let someDate = null;
