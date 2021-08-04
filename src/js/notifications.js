@@ -41,16 +41,10 @@ export default {
         toastr["info"]("This film added to Queue");
     },
 
-    addToWatchedError() {
-        toastr["warning"]("This film has already been added to Watched");
-    },
-
-    addToQueueError() {
-        toastr["warning"]("This film has already been added to Queue");
-    },
     removeFromWatched() {
         toastr["info"]("This film removed from Watched");
     },
+    
     removeFromQueue() {
         toastr["info"]("This film removed from Queue");
     },
