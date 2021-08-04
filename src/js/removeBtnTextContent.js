@@ -33,6 +33,13 @@ export default function onClickAddOrRemoveBtn(e) {
 }
 
 const refs = getRefs();
+
 document.body.addEventListener('click', onClickAddOrRemoveBtn);
 // refs.mainRef.addEventListener('click', onClickAddOrRemoveBtn);
 // refs.movieModalBtn.addEventListener('click', onClickAddOrRemoveBtn);
+
+
+//refs.mainRef.addEventListener('click', onClickAddOrRemoveBtn);
+///////це було розкомент,нижнє///////////////////////////////////////
+// refs.movieModalBtn.addEventListener('click', onClickAddOrRemoveBtn);
+
