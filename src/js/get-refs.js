@@ -29,8 +29,6 @@ export default function getRefs() {
         mainRef: document.querySelector("#app"),
         library: document.getElementById('library-list'),
         containerLib: document.querySelector("main"),
-
-
-
+        headerBtns: document.querySelectorAll('.header__button'),
     }
 }

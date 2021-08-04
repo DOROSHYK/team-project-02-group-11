@@ -30,4 +30,5 @@ import './js/to-top-btn';
 
 import './js/storageEventListeners';
 import './js/filmCardShot.js';
+import './js/herder-btns-listener.js'
 /////////////////////////////
