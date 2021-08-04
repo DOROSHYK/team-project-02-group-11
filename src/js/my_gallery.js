@@ -13,7 +13,9 @@ refs.headerBtnWrap.addEventListener('click', onMyLibrary);
 
 function onMyLibrary(e, remove) {
   const refs = getRefs();
-  refs.clientGallery.innerHTML = '';
+  
+    // refs.clientGallery.innerHTML = '' ;
+  document.querySelector('#library-list').innerHTML = '';
   let someDate = null;
   if (e.target.textContent === 'Watched' || remove === 'watched') {
     
@@ -31,8 +33,8 @@ function onMyLibrary(e, remove) {
     }
     return cardImage(el)
   }).join('');
-  refs.clientGallery.insertAdjacentHTML('beforeend', resultLibrary);
-  
+  // refs.clientGallery.insertAdjacentHTML('beforeend', resultLibrary);
+  document.querySelector('#library-list').insertAdjacentHTML('beforeend', resultLibrary);
   }
 
 export default onMyLibrary

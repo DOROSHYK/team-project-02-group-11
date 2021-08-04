@@ -33,7 +33,7 @@ const onRemoveWatched = (e) => {
     const id = e.path[2].dataset.id || LS.getLastFilm().id;
     LS.removeFromWatched(id);
     if (document.URL.includes('library')) {
-        document.querySelector('[data-modal-close]').click();
+        // document.querySelector('[data-modal-close]').click();
         
         onMyLibrary(e, 'watched');
     }
@@ -45,7 +45,7 @@ const onRemoveQueue = (e) => {
     LS.removeFromQueue(id);
     
     if (document.URL.includes('library')) {
-        document.querySelector('[data-modal-close]').click();
+        // document.querySelector('[data-modal-close]').click();
         onMyLibrary(e, 'queue')
     }
 }
