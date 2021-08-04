@@ -12,8 +12,6 @@ let currentID = null;
 refs.headerBtnWrap.addEventListener('click', onMyLibrary);
 
 function onMyLibrary(e, remove) {
-  
-  
   const refs = getRefs();
   refs.clientGallery.innerHTML = '';
   let someDate = null;
