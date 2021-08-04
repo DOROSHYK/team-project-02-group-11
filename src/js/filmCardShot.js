@@ -34,6 +34,6 @@ const LS = new LocalStorage;
     })
 }
 document.body.addEventListener('click', onClick); */
-
+console.log(document.URL)
 
 

@@ -30,18 +30,21 @@ refs.headerBtnWrap.addEventListener('click', onMyLibrary);
 //   }
 // };
 
-function onMyLibrary(e) {
+function onMyLibrary(e, remove) {
   const refs = getRefs();
   refs.clientGallery.innerHTML = '';
+  console.log('wrqw')
+  console.log(document.URL.includes('library'));
   let someDate = null;
 
-  if (e.target.textContent === 'Watched') {
+  if (e.target.textContent === 'Watched'|| remove === 'watched') {
     someDate = loc.getWatched();
     console.log(someDate);
   }
-  else if (e.target.textContent === 'Queue') {
+  else if (e.target.textContent === 'Queue'|| remove ==='queue') {
       someDate = loc.getQueue();
   }
+  
 
   const resultLibrary = someDate.map(el => {
     let genresArr = el.genres.split(', ');
@@ -53,4 +56,4 @@ function onMyLibrary(e) {
   refs.clientGallery.insertAdjacentHTML('beforeend', resultLibrary);
   }
 
-
+export default onMyLibrary
