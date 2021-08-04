@@ -69,6 +69,13 @@ function onCloseMovieBtnClick(event) {
     if (event.target.classList.contains('close-movie-modal-js') || event.target.classList.contains('js-close-movie-modal-icon')) {
         hideMovieModal();
         removeMovieListeners();
+        
+        // document.querySelector('#add-watched').textContent = "Add to watched";
+        // document.querySelector('#add-watched').className = "add-to-watched add-button uppercase";
+        // console.log(document.querySelector('#add-watched').className)
+        // document.querySelector('#add-queue').textContent = "Add to queue";
+        // document.querySelector('#add-queue').className = "add-button add-to-queue uppercase";
+        
     }
 }
 
