@@ -19,6 +19,7 @@ export default function onClickAddOrRemoveBtn(e) {
         e.target.classList.add('add-to-queue');
         e.target.classList.remove('remove-from-queue');
         e.target.textContent = 'Add to queue';
+        
     }
 
     else if (e.target.textContent === 'Remove watched') {
@@ -30,5 +31,5 @@ export default function onClickAddOrRemoveBtn(e) {
 
 const refs = getRefs();
 
-refs.mainRef.addEventListener('click', onClickAddOrRemoveBtn);
+//refs.mainRef.addEventListener('click', onClickAddOrRemoveBtn);
 refs.movieModalBtn.addEventListener('click', onClickAddOrRemoveBtn);

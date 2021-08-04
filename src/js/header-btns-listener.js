@@ -15,7 +15,7 @@ function onMyLibrary(e) {
       someDate = loc.getWatched();
       refs.headerBtns[0].classList.add('button--current');
       refs.headerBtns[1].classList.remove('button--current');
-  }
+  }   
 
   else if (e.target.textContent === 'Queue') {
       someDate = loc.getQueue();
