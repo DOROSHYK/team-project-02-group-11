@@ -1,16 +1,57 @@
 import getRefs from './get-refs';
+import Local from './LocalStorage';
+import cardImage from '../template/filmCardShot';
 
-const refs = getRefs();
+ const refs = getRefs();
 
 refs.siteNavigation.addEventListener('click', onHeaderLinkClick);
 
-function onHeaderLinkClick(event) {
+const loc = new Local();
+
+let someDate = loc.getWatched();
+
+const removeBtnsTextContent = async () => {
+                   
+                   console.log(1)
+                   getRefs().addToQueueBtnsFilmCard.forEach((btn) => {
+                       btn.textContent = 'Remove queue';
+                   });
+                   getRefs().addToWatchedBtnsFilmCard.forEach((btn) => {
+                       btn.textContent = 'Remove watched';
+                   });
+};
+               
+export default function renderLibraryPage(date) {
+    
+    getRefs().library.innerHTML = '';
+               
+    const resultLibrary = date.map(el => cardImage(el)).join('');
+    getRefs().library.insertAdjacentHTML('beforeend', resultLibrary);
+             
+    getRefs().addToQueueBtnModal.textContent = 'Remove queue';
+    getRefs().addToWatchedBtnModal.textContent = 'Remove watched';
+               
+    removeBtnsTextContent();
+}
+
+ function onHeaderLinkClick(event) {
     if (event.target.classList.contains('header-link')) {
        if (event.target.getAttribute('href') === '/library') {
-            removeElementClass()
+           removeElementClass()
             refs.navLinks[2].classList.add('site-nav__link--current');
             refs.header.classList.add('header-library');
             refs.headerInputWrap.classList.add('hide');
+
+            if (event.target.textContent === 'Watched') {
+                someDate = loc.getWatched();
+            } else if (event.target.textContent === 'Queue') {
+                someDate = loc.getQueue();
+            }
+           setTimeout(() => {
+               renderLibraryPage(someDate);   
+           }, 0)
+           
+
         } else {
             removeElementClass()
             refs.header.classList.add('header-home');

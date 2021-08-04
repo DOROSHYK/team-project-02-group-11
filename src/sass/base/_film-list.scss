@@ -1,6 +1,6 @@
 .film-cards {
   padding-top: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 137px;
 }
 
 @media screen and (min-width: 768px) {
@@ -10,7 +10,7 @@
   }
   .film-cards {
     padding-top: 60px;
-    padding-bottom: 50px;
+    padding-bottom: 127px;
     &__list {
       display: grid;
       grid-template-columns: repeat(2, 294px);

@@ -7,7 +7,7 @@ toastr.options = {
   "debug": false,
   "newestOnTop": false,
   "progressBar": false,
-  "positionClass": "toast-top-full-width",
+  "positionClass": "toast-top-center",
   "preventDuplicates": false,
   "onclick": null,
   "showDuration": "300",
@@ -26,7 +26,7 @@ export default {
     // },
 
     incorrectRequest() {
-        toastr["error"]("Search result not successful. Enter the correct movie name and try again!");
+        toastr["error"]("Search result not successful. Enter the correct request!");
     },
 
     fetchError() {
@@ -34,24 +34,25 @@ export default {
     },
 
     addToWatched() {
-        toastr["info"]("This movie added to Watched");
+        toastr["info"]("This film added to Watched");
     },
     removeFromWatched() {
         toastr["info"]("This movie successfully removed from Watched");
     },
 
     addToQueue() {
-        toastr["info"]("This movie added to Queue");
+        toastr["info"]("This film added to Queue");
     },
     removeFromQueue() {
         toastr["info"]("This movie successfully removed from Queue");
     },
 
-    addToWatchedError() {
-        toastr["warning"]("This movie has already been added to Watched");
+    removeFromWatched() {
+        toastr["info"]("This film removed from Watched");
     },
-    addToQueueError() {
-        toastr["warning"]("This movie has already been added to Queue");
+    
+    removeFromQueue() {
+        toastr["info"]("This film removed from Queue");
     },
 
 }

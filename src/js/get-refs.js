@@ -25,9 +25,17 @@ export default function getRefs() {
 
         toTopBtn: document.querySelector('.to-top-js'),
         ancor: document.querySelector('.page-header__navigation'),
-        clientGallery: document.querySelector(".filters-list"),
+        clientGallery: document.querySelector(".clients-lib"),
         mainRef: document.querySelector("#app"),
+        library: document.getElementById('library-list'),
+        containerLib: document.querySelector("main"),
+        cardFilBtnWrap: document.querySelector('.card-film-btn__container'),
+        movieModalBtn: document.querySelector('.add-buttons-list'),
+        headerBtns: document.querySelectorAll('.header__button'),
 
-
+        addToWatchedBtnModal: document.querySelector('.add-button.add-to-watched'),
+        addToQueueBtnModal: document.querySelector('.add-button.add-to-queue'),
+        addToWatchedBtnsFilmCard: document.querySelectorAll('.film__button.add-to-watched'),
+        addToQueueBtnsFilmCard: document.querySelectorAll('.film__button.add-to-queue'),
     }
 }
