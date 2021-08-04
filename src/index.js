@@ -29,6 +29,10 @@ import './js/to-top-btn';
 //import './js/my_gallery';
 
 import './js/storageEventListeners';
+
+// import './js/filmCardShot.js';
+
 import './js/filmCardShot.js';
 import './js/header-btns-listener.js'
 /////////////////////////////
+

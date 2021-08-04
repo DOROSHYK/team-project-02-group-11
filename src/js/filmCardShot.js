@@ -34,6 +34,11 @@ const LS = new LocalStorage;
     })
 }
 document.body.addEventListener('click', onClick); */
-
-
-
+// console.log(document.URL);
+// import onMyLibrary from './my_gallery';
+// console.log(onMyLibrary)
+// onMyLibrary({}, 'watched')
+// let q = 'watched';
+// document.body.addEventListener('click', (e) => onMyLibrary(e, 'queue'))
+// if (document.URL.includes('library'))
+;
