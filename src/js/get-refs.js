@@ -33,5 +33,9 @@ export default function getRefs() {
         movieModalBtn: document.querySelector('.add-buttons-list'),
         headerBtns: document.querySelectorAll('.header__button'),
 
+        addToWatchedBtnModal: document.querySelector('.add-button.add-to-watched'),
+        addToQueueBtnModal: document.querySelector('.add-button.add-to-queue'),
+        addToWatchedBtnsFilmCard: document.querySelectorAll('.film__button.add-to-watched'),
+        addToQueueBtnsFilmCard: document.querySelectorAll('.film__button.add-to-queue'),
     }
 }

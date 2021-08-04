@@ -30,6 +30,19 @@ let someDate = loc.getWatched();
                const refs = getRefs();
                const resultLibrary = someDate.map(el => cardImage(el)).join('');
                refs.library.insertAdjacentHTML('beforeend', resultLibrary);
+             
+               refs.addToQueueBtnModal.textContent = 'Remove queue';
+               refs.addToWatchedBtnModal.textContent = 'Remove watched';
+               setTimeout(() => {
+                   const refs = getRefs();
+                   
+                   refs.addToQueueBtnsFilmCard.forEach((btn) => {
+                       btn.textContent = 'Remove queue';
+                   });
+                   refs.addToWatchedBtnsFilmCard.forEach((btn) => {
+                       btn.textContent = 'Remove watched';
+                   });
+                }, 0)
            }, 0)
            
 
