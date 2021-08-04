@@ -42,6 +42,7 @@ refs.inputRef.addEventListener('input',  debounce(onMagic,  1500));
 
 function onMagic(e) {
     //e.preventDefault();
+    API.page = 1;
     const refs = getRefs();
     refs.gallery.innerHTML = '';
     refs.popFilmList.classList.remove('visually-hidden');
