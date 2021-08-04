@@ -13,7 +13,9 @@ h3 {
 
 .movie-modal {
   width: 280px;
+  max-height: 95%;
   padding: 48px 20px 41px 20px;
+  overflow-y: scroll;
 }
 
 .film-card {
@@ -151,6 +153,7 @@ h3 {
     width: 882px;
     min-height: 568px;
     padding: 50px 30px 40px 30px;
+    overflow-y: auto;
   }
 
   .modal-movie-image {
