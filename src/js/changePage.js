@@ -12,13 +12,12 @@ let someDate = loc.getWatched();
 
 const removeBtnsTextContent = async () => {
                    
-                   console.log(1)
-                   getRefs().addToQueueBtnsFilmCard.forEach((btn) => {
-                       btn.textContent = 'Remove queue';
-                   });
-                   getRefs().addToWatchedBtnsFilmCard.forEach((btn) => {
-                       btn.textContent = 'Remove watched';
-                   });
+ getRefs().addToQueueBtnsFilmCard.forEach((btn) => {
+    btn.textContent = 'Remove queue';
+});
+ getRefs().addToWatchedBtnsFilmCard.forEach((btn) => {
+    btn.textContent = 'Remove watched';
+});
 };
                
 export default function renderLibraryPage(date) {
@@ -42,11 +41,13 @@ export default function renderLibraryPage(date) {
             refs.header.classList.add('header-library');
             refs.headerInputWrap.classList.add('hide');
 
-            if (event.target.textContent === 'Watched') {
-                someDate = loc.getWatched();
-            } else if (event.target.textContent === 'Queue') {
+            if (loc.getWatched().length === 0 && loc.getQueue().length > 0) {
                 someDate = loc.getQueue();
-            }
+                refs.headerBtns[1].classList.add('button--current');
+                refs.headerBtns[0].classList.remove('button--current');
+           } else {
+               someDate = loc.getWatched();
+           }
            setTimeout(() => {
                renderLibraryPage(someDate);   
            }, 0)
