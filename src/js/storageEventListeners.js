@@ -1,7 +1,7 @@
 import getRefs from "./get-refs";
 import LocalStorage from "./localStorage";
 import ServerAPI from "./serverAPI";
-import onMyLibrary from "./my_gallery";
+// import onMyLibrary from "./my_gallery";
 const api = new ServerAPI;
 const LS = new LocalStorage;
 
@@ -31,14 +31,14 @@ const onRemoveWatched = (e) => {
     if (!className.includes('remove-from-watched')) { return }
     const id = e.path[2].dataset.id || LS.getLastFilm().id;
     LS.removeFromWatched(id);
-    if (document.URL.includes('library')){onMyLibrary(e, 'watched')}
+    // if (document.URL.includes('library')){onMyLibrary(e, 'watched')}
 }
 const onRemoveQueue = (e) => {
     const className = String(e.target.className);
     if (!className.includes('remove-from-queue')) { return }
     const id = e.path[2].dataset.id || LS.getLastFilm().id;
     LS.removeFromQueue(id);
-    if (document.URL.includes('library')){onMyLibrary(e, 'queue')}
+    // if (document.URL.includes('library')){onMyLibrary(e, 'queue')}
 }
 
 

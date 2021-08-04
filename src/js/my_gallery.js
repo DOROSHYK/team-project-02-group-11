@@ -16,6 +16,7 @@ refs.headerBtnWrap.addEventListener('click', onMyLibrary);
 
 function onMyLibrary(e, remove) {
   const refs = getRefs();
+  console.log(refs);
   refs.clientGallery.innerHTML = '';
   console.log('wrqw')
   console.log(document.URL.includes('library'));
@@ -40,4 +41,4 @@ function onMyLibrary(e, remove) {
   refs.clientGallery.insertAdjacentHTML('beforeend', resultLibrary);
   }
 
-export default onMyLibrary
+// export default onMyLibrary
