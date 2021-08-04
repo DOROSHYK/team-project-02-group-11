@@ -27,8 +27,11 @@ export default function getRefs() {
         ancor: document.querySelector('.page-header__navigation'),
         clientGallery: document.querySelector(".clients-lib"),
         mainRef: document.querySelector("#app"),
+        library: document.getElementById('library-list'),
         containerLib: document.querySelector("main"),
         cardFilBtnWrap: document.querySelector('.card-film-btn__container'),
         movieModalBtn: document.querySelector('.add-buttons-list'),
+        headerBtns: document.querySelectorAll('.header__button'),
+
     }
 }

@@ -20,10 +20,10 @@ export default function createCard(someWords) {
     }).join('');
 
     refs.gallery.insertAdjacentHTML('beforeend', resultImages);
-    
+
     if (someWords.total_results === 0) {
       notification.incorrectRequest();
-    } else {
+    } else if (someWords.page === 1) {
         toastr["success"](`Succes. Found ${someWords.total_results} films`);
     }
     } 
