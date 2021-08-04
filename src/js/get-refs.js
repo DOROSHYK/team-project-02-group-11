@@ -25,8 +25,9 @@ export default function getRefs() {
 
         toTopBtn: document.querySelector('.to-top-js'),
         ancor: document.querySelector('.page-header__navigation'),
-        clientGallery: document.querySelector(".filters-list"),
+        clientGallery: document.querySelector(".clients-lib"),
         mainRef: document.querySelector("#app"),
+        containerLib: document.querySelector("main"),
 
 
     }

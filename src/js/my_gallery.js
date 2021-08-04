@@ -1,34 +1,18 @@
 import getRefs from './get-refs';
 import Local from './LocalStorage';
-import ServerAPI from './serverAPI';
 import cardImage from '../template/filmCardShot';
-
+import { create } from 'handlebars';
 
 const loc = new Local();
-const refs = getRefs();
-const API = new ServerAPI;
-let currentID = null;
+let refs = getRefs();
+let someDate = loc.getWatched();
+let resultLibrary = null;
 
-// refs.mainRef.addEventListener('click', onChangeMyLibrary);
+let newLib = document.createElement('ul');
+newLib.classList.add('clients-lib');
+newLib.classList.add('film-cards__list'); //  для стилей
+
 refs.headerBtnWrap.addEventListener('click', onMyLibrary);
-
-// function onChangeMyLibrary(e) {
-//   const refs = getRefs();
-//   const currentEl = e.target.parentNode;
-//   const currentID = currentEl.parentNode.dataset.id;
-
-//   API.getFilmInfoById(currentID).then(saveMe);
-
-//   function saveMe(some) {
-    
-//     const newFilm = API.getObjectForRender(some);
-//     loc.addFilm(newFilm);
-
-//     if (e.target.classList.contains('add-to-watched')) loc.setWatched();
-//     else if (e.target.classList.contains('add-to-queue')) loc.setQueue();
-
-//   }
-// };
 
 function onMyLibrary(e, remove) {
   const refs = getRefs();
