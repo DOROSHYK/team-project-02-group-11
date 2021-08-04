@@ -25,8 +25,6 @@
   top: 50%;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  //   transition: transform var(--transition-duration) var(--cubic);
   width: 300px;
   //height: 560px; Не поміщається контент в .movie-modal mobile
   padding: 20px;
@@ -38,11 +36,12 @@
 
 .footer-modal {
   width: 300px;
-  height: 560px;
+  height: 530px;
   padding: 20px;
 }
 
-.backdrop.is-hidden .modal {
+.backdrop.is-hidden .footer-modal,
+.backdrop.is-hidden .movie-modal {
   transform: translate(-50%, -50%) scale(1.1);
 }
 
@@ -107,52 +106,31 @@
   transform: translate(0, 9%);
 }
 
-.modal-close-button,
-.modal-type-selector {
+.modal-close-button {
   background-color: transparent;
   border: none;
   cursor: pointer;
-}
-
-.modal-type-selector {
-  z-index: 5;
-}
-
-.modal-type-selector:first-child {
-  margin-left: auto;
-  margin-right: 5px;
-}
-
-.modal-type-selector:last-child {
-  margin-right: auto;
 }
 
 .modal-close-button {
   position: absolute;
   top: 10px;
   right: 10px;
-}
 
-.modal-close-button:hover,
-.modal-close-button:focus,
-.modal-type-selector:hover,
-.modal-type-selector:focus {
-  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
-}
-
-.modal-type-list {
-  display: flex;
-  justify-content: center;
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+  }
 }
 
 .modal-close-icon {
   width: 14px;
   height: 14px;
-}
 
-.modal-close-button:hover .modal-close-icon,
-.modal-close-button:focus .modal-close-icon {
-  fill: $accent-color;
+  .modal-close-button:hover &,
+  .modal-close-button:focus & {
+    fill: $accent-color;
+  }
 }
 
 .team-member-social-link:hover,
@@ -187,7 +165,7 @@
 @media screen and (min-width: 1024px) {
   .footer-modal {
     width: 500px;
-    height: 650px;
+    height: 620px;
     padding-left: 50px;
   }
 

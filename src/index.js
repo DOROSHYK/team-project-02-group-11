@@ -9,7 +9,7 @@ import './js/close-modal.js';
 import './js/serverAPI.js';
 
 
-import './js/team-view-switch.js';
+// import './js/team-view-switch.js';
 
 import './js/renderPopFilmList';
 

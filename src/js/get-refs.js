@@ -16,6 +16,7 @@ export default function getRefs() {
         footerModalOpener: document.querySelector('.js-open-team-modal'),
         footerCloseModalBtn: document.querySelector('.close-footer-modal-js'),
         closeModalButton: document.querySelector('[data-modal-close]'),
+        backdrop: document.querySelector('.backdrop'),
 
         allPage: document.querySelector('body'),
         buttonTheme: document.querySelector('.theme-switch__control'),
