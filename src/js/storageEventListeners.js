@@ -64,7 +64,7 @@ function onClickAddOrRemoveBtn(e) {
         const className = String(e.target.className);
         if (!className.includes('add-to-watched')) { return }
         const id = e.path[2].dataset.id || LS.getLastFilm().id;
-        LS.removeFromQueue(id);
+        LS.removeFromWatched(id);
         e.target.textContent = 'Add to watched';
     }
 }
@@ -75,6 +75,6 @@ function onClickAddOrRemoveBtn(e) {
 // document.body.addEventListener('click', onRemoveWatched);
 // document.body.addEventListener('click', onRemoveQueue);
 const refs = getRefs();
-console.log(refs.movieModalBtn)
+
 refs.mainRef.addEventListener('click', onClickAddOrRemoveBtn);
 refs.movieModalBtn.addEventListener('click', onClickAddOrRemoveBtn);

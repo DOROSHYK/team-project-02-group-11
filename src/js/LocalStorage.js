@@ -24,7 +24,6 @@ export default class LocalStorage {
         const films = this.loadAll();
         const currentFilm = films.total[films.total.length - 1];
         if (films.queue.some(film => film.id === currentFilm.id)) {
-            notification.addToQueueError();
             console.log(films)
         return
          }
@@ -48,7 +47,6 @@ export default class LocalStorage {
         const films = this.loadAll();
         const currentFilm = films.total[films.total.length - 1];
         if (films.watched.some(film => film.id === currentFilm.id)) {
-            notification.addToWatchedError();
             console.log(films)
         return
          }

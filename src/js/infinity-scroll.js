@@ -20,7 +20,10 @@ window.addEventListener('scroll',() => {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
     if (clientHeight + scrollTop >= scrollHeight) {
         refs.toTopBtn.classList.remove('visually-hidden');
-        if (!refs.popFilmList.classList.contains('visually-hidden')) {
+        if (refs.navLinks[2].classList.contains('site-nav__link--current')) {
+        return;
+        }
+        else if (!refs.popFilmList.classList.contains('visually-hidden')) {
              
             API.page += 1;
             API.getPopularFilmList().then(renderPopFilms);  
