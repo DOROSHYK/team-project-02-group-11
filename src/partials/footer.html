@@ -6,14 +6,15 @@
       <svg class="footer_icon-heart" width="12.75" height="14">
         <use href="./images/sprite.svg#icon-heart"></use>
       </svg>
-      by <a href="#"  class="footer_link js-open-team-modal">GoIT Students</a>
+      <!-- by <a href="#"  class="footer_link js-open-team-modal">GoIT Students</a> -->
+      by <span class="footer_link js-open-team-modal">GoIT Students</span>
     </p>
   </div>
 
   <div class="backdrop is-hidden js-footer-backdrop">
-    <div class="footer-modal">
+    <div class="footer-modal" data-modal="">
       <button type="button" class="modal-close-button close-footer-modal-js">
-        <svg class="modal-close-icon">
+        <svg class="modal-close-icon js-close-footer-modal-icon">
           <use href="./images/sprite.svg#icon-close-icon"></use>
         </svg>
       </button>
@@ -159,18 +160,6 @@
           </li>
         </ol>
       </div>
-      <ul class="modal-type-list">
-        <button id="listed" class="modal-type-selector is-active js-listed" type="button">
-          <svg id="listed-icon" class="modal-type-icon">
-            <use href="./images/sprite.svg#icon-list-type"></use>
-          </svg>
-        </button>
-        <button id="description" class="modal-type-selector js-descr" type="button">
-          <svg id="description-icon" class="modal-type-icon">
-            <use href="./images/sprite.svg#icon-desc-type"></use>
-          </svg>
-        </button>
-      </ul>
     </div>
   </div>
 </footer>
