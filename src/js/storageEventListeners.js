@@ -34,7 +34,9 @@ const onRemoveWatched = (e) => {
     LS.removeFromWatched(id);
     if (document.URL.includes('library')) {
         // document.querySelector('[data-modal-close]').click();
-        
+        // if (!refs.movieModal.classList.contains('is-hidden')) {
+        //     refs.movieModal.classList.add('is-hidden')
+        // }
         onMyLibrary(e, 'watched');
     }
 }
@@ -45,6 +47,9 @@ const onRemoveQueue = (e) => {
     LS.removeFromQueue(id);
     
     if (document.URL.includes('library')) {
+        // if (!refs.movieModal.classList.contains('is-hidden')) {
+        //     refs.movieModal.classList.add('is-hidden')
+        // }
         // document.querySelector('[data-modal-close]').click();
         onMyLibrary(e, 'queue')
     }
