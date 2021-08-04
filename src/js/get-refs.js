@@ -29,6 +29,9 @@ export default function getRefs() {
         mainRef: document.querySelector("#app"),
         library: document.getElementById('library-list'),
         containerLib: document.querySelector("main"),
+        cardFilBtnWrap: document.querySelector('.card-film-btn__container'),
+        movieModalBtn: document.querySelector('.add-buttons-list'),
         headerBtns: document.querySelectorAll('.header__button'),
+
     }
 }
