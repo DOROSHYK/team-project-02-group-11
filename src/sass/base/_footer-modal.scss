@@ -38,6 +38,7 @@
   width: 300px;
   height: 530px;
   padding: 20px;
+  z-index: 10;
 }
 
 .backdrop.is-hidden .footer-modal,
@@ -76,6 +77,7 @@
 
 .footer-flex-wrapper {
   display: flex;
+  width: 125px;
   flex-direction: column;
   justify-content: space-evenly;
   margin-right: auto;
@@ -83,7 +85,6 @@
 
 .team-member-name {
   display: inline-block;
-  margin-right: 15px;
   color: $accent-color;
   font-weight: 400;
   font-size: 14px;
@@ -102,8 +103,11 @@
 }
 
 .team-member-social-link {
-  margin-right: 10px;
   transform: translate(0, 9%);
+}
+
+.team-member-social-link.gh-link {
+  margin-right: 5px;
 }
 
 .modal-close-button {
@@ -181,5 +185,9 @@
 
   .team-list-item {
     margin-bottom: 10px;
+  }
+
+  .footer-flex-wrapper {
+    width: 280px;
   }
 }
