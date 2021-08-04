@@ -14,31 +14,20 @@ newLib.classList.add('film-cards__list'); //  для стилей
 
 refs.headerBtnWrap.addEventListener('click', onMyLibrary);
 
-
-function onMyLibrary(e, remove) {
-  
-  // if(!document.URL.includes('library')) {return}
-  const refs = getRefs();
+function onMyLibrary(e) {
+  refs = getRefs();
   refs.clientGallery.innerHTML = '';
-  let someDate = null;
-  if (e.target.textContent === 'Watched' || remove === 'watched') {
-    
-    someDate = loc.getWatched();
-    
+
+  if (e.target.textContent === 'Watched') { 
+      someDate = loc.getWatched();
   }
-  else if (e.target.textContent === 'Queue' || remove === 'queue') {
-    
+
+  else if (e.target.textContent === 'Queue') {
       someDate = loc.getQueue();
   }
-  const resultLibrary = someDate.map(el => {
-     let genresArr = el.genres.split(', ');
-    if (genresArr.length > 2) {
-      el.genres = genresArr.splice(0, 2).join(', ') + ", others"
-    }
-    return cardImage(el)
-  }).join('');
-  refs.clientGallery.insertAdjacentHTML('beforeend', resultLibrary);
-
+ 
+    resultLibrary = someDate.map(el => cardImage(el)).join(''); 
+    refs.clientGallery.insertAdjacentHTML('beforeend', resultLibrary);
 
 };
 
@@ -56,4 +45,19 @@ export default function onLoadLibrary() {
 
 
 
-export default onMyLibrary
+
+
+
+
+  resultLibrary = someDate.map(el => {
+    let genresArr = el.genres.split(', ');
+    if (genresArr.length > 2) {
+      el.genres = genresArr.splice(0, 2).join(', ') + ", others"
+    }
+    return cardImage(el)
+  }).join('');
+  refs.clientGallery.insertAdjacentHTML('beforeend', resultLibrary);
+  
+
+
+

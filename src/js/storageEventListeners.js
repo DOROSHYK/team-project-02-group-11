@@ -1,13 +1,8 @@
-
-import getRefs from "./get-refs";
-import LocalStorage from "./LocalStorage";
-import ServerAPI from "./serverAPI";
-import onMyLibrary from "./my_gallery";
-
+import LocalStorage from './LocalStorage';
+import ServerAPI from './serverAPI';
+import getRefs from './get-refs';
 const api = new ServerAPI;
 const LS = new LocalStorage;
-
-const refs = getRefs();
 
 
 const isBtnFromShortCard = (e, className) => {
@@ -27,28 +22,6 @@ const isBtnFromShortCard = (e, className) => {
 //     if (!className.includes('add-to-queue')) { return }
 //     isBtnFromShortCard(e, className).then(LS.setQueue.bind(LS));
 // }
-
-
-const onRemoveWatched = (e) => {
-    const className = String(e.target.className);
-    if (!className.includes('remove-from-watched')) { return }
-    const id = e.path[2].dataset.id || LS.getLastFilm().id;
-    LS.removeFromWatched(id);
-    if (document.URL.includes('library')) {
-        document.querySelector('[data-modal-close]').click();
-        
-        onMyLibrary(e, 'watched');
-    }
-}
-const onRemoveQueue = (e) => {
-    const className = String(e.target.className);
-    if (!className.includes('remove-from-queue')) { return }
-    const id = e.path[2].dataset.id || LS.getLastFilm().id;
-    LS.removeFromQueue(id);
-    
-    if (document.URL.includes('library')) {
-        document.querySelector('[data-modal-close]').click();
-        onMyLibrary(e, 'queue')
 
 //const onRemoveWatched = (e) => {
 //     const className = String(e.target.className);
@@ -93,7 +66,6 @@ function onClickAddOrRemoveBtn(e) {
         const id = e.path[2].dataset.id || LS.getLastFilm().id;
         LS.removeFromWatched(id);
         e.target.textContent = 'Add to watched';
-
     }
 }
 

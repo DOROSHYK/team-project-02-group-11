@@ -36,15 +36,9 @@ export default {
     addToWatched() {
         toastr["info"]("This film added to Watched");
     },
-    removeFromWatched() {
-        toastr["info"]("This movie successfully removed from Watched");
-    },
 
     addToQueue() {
         toastr["info"]("This film added to Queue");
-    },
-    removeFromQueue() {
-        toastr["info"]("This movie successfully removed from Queue");
     },
 
     removeFromWatched() {
@@ -54,5 +48,4 @@ export default {
     removeFromQueue() {
         toastr["info"]("This film removed from Queue");
     },
-
 }
