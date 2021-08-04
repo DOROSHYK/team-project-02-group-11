@@ -30,4 +30,4 @@ import './js/my_gallery';
 
 import './js/storageEventListeners';
 
-import './js/filmCardShot.js';
+// import './js/filmCardShot.js';
