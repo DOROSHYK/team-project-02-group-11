@@ -33,6 +33,7 @@ import './js/storageEventListeners';
 // import './js/filmCardShot.js';
 
 import './js/filmCardShot.js';
-import './js/header-btns-listener.js'
+import './js/header-btns-listener.js';
+import './js/removeBtnTextContent.js';
 /////////////////////////////
 
