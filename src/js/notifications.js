@@ -55,7 +55,7 @@ export default {
         toastr["info"]("This film removed from Queue");
     },
     alreadyIn() {
-        toastr["info"]("This film is already in yoir collection");
+        toastr["info"]("This film is already in your collection");
     }
 
 }

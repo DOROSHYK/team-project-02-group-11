@@ -13,6 +13,7 @@ let refs = getRefs();
 // const debounce = require('lodash.debounce');
 
 let searchQuery = '';
+
 //=====   infinity scroll
 
 const ioCallback = ([entrie], observerRef) => {
@@ -69,7 +70,7 @@ function renderPopFilms(filmData) {
     // if (dataForRender.poster_path)
 
 
-    console.log(API.isLoading);
+    
     
     const markup = tempFilmCard(dataForRender);
     const refs = getRefs();
