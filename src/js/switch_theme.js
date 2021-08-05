@@ -67,7 +67,7 @@ function switchTheme(e) {
             }
        ) 
     }
-
+ savedTheme(); 
 };
 
  savedTheme(); 
@@ -85,5 +85,4 @@ function savedTheme() {
 
   }
 
-  savedTheme(); 
 }
