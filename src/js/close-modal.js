@@ -48,7 +48,7 @@ function removeListeners() {
 
 function hideModal() {
     refs.footerModal.classList.add('is-hidden');
-    refs.movieModal.classList.add('is-hidden');
+    //refs.movieModal.classList.add('is-hidden');
     refs.iconTheme.style.zIndex = 1;
 }
 
@@ -58,6 +58,7 @@ export function addMovieModalListener() {
     refs.movieModal.addEventListener('click', closeMovieModal);
     document.body.style.overflow = 'hidden';
     document.addEventListener('keydown', onEscapeClose);
+    refs.closeModalButton.addEventListener('click', closeMovieModal)
 }
 
 function closeMovieModal(event) {
@@ -66,9 +67,9 @@ function closeMovieModal(event) {
 }
 
 function onCloseMovieBtnClick(event) {
-    if (event.target.classList.contains('close-movie-modal-js') || event.target.classList.contains('js-close-movie-modal-icon')) {
+    //if (event.target.classList.contains('close-movie-modal-js')) { //|| event.target.classList.contains('js-close-movie-modal-icon')) {
         hideMovieModal();
-        removeMovieListeners();
+        //removeMovieListeners();
         
         // document.querySelector('#add-watched').textContent = "Add to watched";
         // document.querySelector('#add-watched').className = "add-to-watched add-button uppercase";
@@ -76,7 +77,7 @@ function onCloseMovieBtnClick(event) {
         // document.querySelector('#add-queue').textContent = "Add to queue";
         // document.querySelector('#add-queue').className = "add-button add-to-queue uppercase";
         
-    }
+    //}
 }
 
 function hideMovieModal() {
@@ -90,11 +91,11 @@ function removeMovieListeners() {
 }
 
 function onMovieBackdropClick(event) {
-    if (!event.target.classList.contains('js-movie-backdrop')) {
-        return;
-    }
+    // if (!event.target.classList.contains('js-movie-backdrop')) {
+    //     return;
+    // }
     hideMovieModal();
-    removeMovieListeners();
+   // removeMovieListeners();
 }
 
 

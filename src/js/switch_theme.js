@@ -1,6 +1,6 @@
 import getRefs from './get-refs';
 
-const refs = getRefs();
+let refs = getRefs();
 
 const Theme = {
     LIGHT: 'light-theme',
@@ -11,13 +11,10 @@ refs.buttonTheme.addEventListener('click', switchTheme);
 
 
 function switchTheme(e) {   
-<<<<<<< Updated upstream
-  
-     if (!e.target.checked){
-=======
+
     refs = getRefs();
      if (e.target.checked){
->>>>>>> Stashed changes
+
         refs.allPage.classList.add(Theme.LIGHT);
         refs.allPage.classList.remove(Theme.DARK);
         localStorage.setItem('Theme', Theme.LIGHT);
@@ -70,29 +67,22 @@ function switchTheme(e) {
             }
        ) 
     }
-<<<<<<< Updated upstream
-  savedTheme(); 
-=======
-   savedTheme(); 
->>>>>>> Stashed changes
+
 };
+
+ savedTheme(); 
 
 function savedTheme() {
   const saveTheme = localStorage.getItem('Theme');
+  console.log(saveTheme);
   if (saveTheme) {
      refs.allPage.classList.add(saveTheme);
-<<<<<<< Updated upstream
-     if (saveTheme === Theme.DARK) {
-       refs.buttonTheme.checked = true;
-     }
-=======
-      if (saveTheme === Theme.DARK) {
-       refs.buttonTheme.checked = true;
-      
-    }
-    
 
->>>>>>> Stashed changes
+     if (saveTheme === Theme.DARK) {
+      refs.buttonTheme.checked = true;
+      
+     }
+
   }
 
   savedTheme(); 
