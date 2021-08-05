@@ -20,7 +20,6 @@ function onMyLibrary(e) {
       someDate = loc.getWatched();
       
   }   
-
     else if (e.target.textContent === 'Queue') {
         refs.headerBtns[1].classList.add('button--current');
         refs.headerBtns[0].classList.remove('button--current');
