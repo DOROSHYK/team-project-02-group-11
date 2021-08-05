@@ -9,6 +9,7 @@ export default class ServerAPI {
         this.language = 'en';
         this.keyWord = '';
         this.genres = genres;
+        this.isLoading = false;
 
          } 
         // movie  а не all

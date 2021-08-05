@@ -23,7 +23,13 @@ export default function renderLibraryPage(date) {
     
     getRefs().library.innerHTML = '';
                
-    const resultLibrary = date.map(el => cardImage(el)).join('');
+    const resultLibrary = date.map(el => {
+        let genresArr = el.genres.split(', ');
+        if (genresArr.length > 2) {
+            el.genres = genresArr.splice(0, 2).join(', ') + ", Other"
+        }
+        return cardImage(el)
+    }).join('');
     getRefs().library.insertAdjacentHTML('beforeend', resultLibrary);
     document.body.querySelector('#add-queue').textContent = 'Remove queue';
     document.body.querySelector('#add-watched').textContent = 'Remove watched';         
