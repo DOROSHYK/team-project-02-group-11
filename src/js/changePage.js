@@ -8,17 +8,16 @@ refs.siteNavigation.addEventListener('click', onHeaderLinkClick);
 
 const loc = new Local();
 
-let someDate = loc.getWatched();
 
-const removeBtnsTextContent = async () => {
+// const removeBtnsTextContent = async () => {
                    
- getRefs().addToQueueBtnsFilmCard.forEach((btn) => {
-    btn.textContent = 'Remove queue';
-});
- getRefs().addToWatchedBtnsFilmCard.forEach((btn) => {
-    btn.textContent = 'Remove watched';
-});
-};
+//  getRefs().addToQueueBtnsFilmCard.forEach((btn) => {
+//     btn.textContent = 'Remove queue';
+// });
+//  getRefs().addToWatchedBtnsFilmCard.forEach((btn) => {
+//     btn.textContent = 'Remove watched';
+// });
+// };
                
 export default function renderLibraryPage(date) {
     
@@ -36,7 +35,7 @@ export default function renderLibraryPage(date) {
     getRefs().addToQueueBtnModal.textContent = 'Remove queue';
     getRefs().addToWatchedBtnModal.textContent = 'Remove watched';
                
-    removeBtnsTextContent();
+    //removeBtnsTextContent();
 }
 
  function onHeaderLinkClick(event) {
@@ -46,11 +45,13 @@ export default function renderLibraryPage(date) {
             refs.navLinks[2].classList.add('site-nav__link--current');
             refs.header.classList.add('header-library');
             refs.headerInputWrap.classList.add('hide');
+             let someDate = loc.getWatched();
 
             if (loc.getWatched().length === 0 && loc.getQueue().length > 0) {
                 someDate = loc.getQueue();
                 refs.headerBtns[1].classList.add('button--current');
                 refs.headerBtns[0].classList.remove('button--current');
+                
            } else {
                someDate = loc.getWatched();
            }

@@ -24,7 +24,7 @@ export default class LocalStorage {
         const films = this.loadAll();
         const currentFilm = films.total[films.total.length - 1];
         if (films.queue.some(film => film.id === currentFilm.id)) {
-            console.log(films)
+            notification.alreadyIn();
         return
          }
         films.watched.forEach((film, idx, arr) => film.id === currentFilm.id ? arr.splice(idx, 1) : null)
@@ -47,13 +47,13 @@ export default class LocalStorage {
         const films = this.loadAll();
         const currentFilm = films.total[films.total.length - 1];
         if (films.watched.some(film => film.id === currentFilm.id)) {
-            console.log(films)
+            notification.alreadyIn();
         return
          }
         films.queue.forEach((film, idx, arr) => film.id === currentFilm.id ? arr.splice(idx, 1) : null)
         films.watched.push(currentFilm);
         
-        this.saveAll(films)
+        this.saveAll(films);
         notification.addToWatched();
         console.log(films)
     }

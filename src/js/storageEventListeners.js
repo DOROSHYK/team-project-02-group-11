@@ -25,6 +25,7 @@ const onQueue = (e) => {
     const className = String(e.target.className);
     if (!className.includes('add-to-queue')) { return }
     isBtnFromShortCard(e, className).then(LS.setQueue.bind(LS));
+
 }
 
 const onRemoveWatched = (e) => {
@@ -33,10 +34,10 @@ const onRemoveWatched = (e) => {
     const id = e.path[2].dataset.id || LS.getLastFilm().id;
     LS.removeFromWatched(id);
     if (document.URL.includes('library')) {
-        // document.querySelector('[data-modal-close]').click();
-        // if (!refs.movieModal.classList.contains('is-hidden')) {
-        //     refs.movieModal.classList.add('is-hidden')
-        // }
+   
+        if (!refs.movieModal.classList.contains('is-hidden')) {
+            refs.movieModal.classList.add('is-hidden')
+        }
         onMyLibrary(e, 'watched');
     }
 }
@@ -45,12 +46,12 @@ const onRemoveQueue = (e) => {
     if (!className.includes('remove-from-queue')) { return }
     const id = e.path[2].dataset.id || LS.getLastFilm().id;
     LS.removeFromQueue(id);
-    
+
     if (document.URL.includes('library')) {
-        // if (!refs.movieModal.classList.contains('is-hidden')) {
-        //     refs.movieModal.classList.add('is-hidden')
-        // }
-        // document.querySelector('[data-modal-close]').click();
+        if (!refs.movieModal.classList.contains('is-hidden')) {
+            refs.movieModal.classList.add('is-hidden')
+        }
+        
         onMyLibrary(e, 'queue')
     }
 }

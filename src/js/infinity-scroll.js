@@ -18,7 +18,7 @@ window.addEventListener('scroll',() => {
 
     const refs = getRefs();
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-    if (clientHeight + scrollTop >= scrollHeight) {
+    if (clientHeight + scrollTop >= scrollHeight-400) {
         refs.toTopBtn.classList.remove('visually-hidden');
         if (refs.navLinks[2].classList.contains('site-nav__link--current')) {
         return;
@@ -42,13 +42,14 @@ refs.inputRef.addEventListener('input',  debounce(onMagic,  1500));
 
 function onMagic(e) {
     //e.preventDefault();
+    API.page = 1;
     const refs = getRefs();
     refs.gallery.innerHTML = '';
     refs.popFilmList.classList.remove('visually-hidden');
         // stopSpin();
     searchQuery = e.target.value;
 
-    if (!searchQuery.trim().length)  return notification.incorrectRequest();;
+    if (!searchQuery.trim().length)  return notification.incorrectRequest();
     stopSpin();
    
     API.getFilmByKeyword(searchQuery)

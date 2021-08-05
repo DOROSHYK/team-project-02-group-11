@@ -9,6 +9,7 @@ function onOpenTeamModal(){
     document.body.style.overflow = 'hidden';
     refs.footerModal.addEventListener('click', closeFooterModal);
     document.addEventListener('keydown', onEscapeClose);
+    refs.iconTheme.style.zIndex = -1;
 };
 
 export function onEscapeClose(event) {
@@ -48,6 +49,7 @@ function removeListeners() {
 function hideModal() {
     refs.footerModal.classList.add('is-hidden');
     refs.movieModal.classList.add('is-hidden');
+    refs.iconTheme.style.zIndex = 1;
 }
 
 //movieModal
@@ -67,6 +69,13 @@ function onCloseMovieBtnClick(event) {
     if (event.target.classList.contains('close-movie-modal-js') || event.target.classList.contains('js-close-movie-modal-icon')) {
         hideMovieModal();
         removeMovieListeners();
+        
+        // document.querySelector('#add-watched').textContent = "Add to watched";
+        // document.querySelector('#add-watched').className = "add-to-watched add-button uppercase";
+        // console.log(document.querySelector('#add-watched').className)
+        // document.querySelector('#add-queue').textContent = "Add to queue";
+        // document.querySelector('#add-queue').className = "add-button add-to-queue uppercase";
+        
     }
 }
 
