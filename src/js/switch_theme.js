@@ -11,8 +11,10 @@ refs.buttonTheme.addEventListener('click', switchTheme);
 
 
 function switchTheme(e) {   
+
     refs = getRefs();
-     if (!e.target.checked){
+     if (e.target.checked){
+
         refs.allPage.classList.add(Theme.LIGHT);
         refs.allPage.classList.remove(Theme.DARK);
         localStorage.setItem('Theme', Theme.LIGHT);
@@ -42,9 +44,30 @@ function switchTheme(e) {
           
          refs.allPage.classList.add(Theme.DARK);
        refs.allPage.classList.remove(Theme.LIGHT);
-         localStorage.setItem('Theme', Theme.DARK);
+       localStorage.setItem('Theme', Theme.DARK);
+       
+        refs.iconTheme.animate(
+        [
+          // keyframes
+              { transform: 'translateY(0px)' },
+              { transform: 'translateY(25px)' },
+              { transform: 'translateY(50px)' },
+              { transform: 'translateY(100px)' }
+        ], {
+              // timing options
+              duration: 1000
+            }
+       );
+       refs.iconHideTheme.animate(
+        [
+              { transform: 'translateY(0px)' }
+        ], {
+              // timing options
+              duration: 1000
+            }
+       ) 
     }
- 
+
 };
 
  savedTheme(); 
@@ -54,9 +77,13 @@ function savedTheme() {
   console.log(saveTheme);
   if (saveTheme) {
      refs.allPage.classList.add(saveTheme);
+
      if (saveTheme === Theme.DARK) {
       refs.buttonTheme.checked = true;
       
      }
+
   }
+
+  savedTheme(); 
 }
