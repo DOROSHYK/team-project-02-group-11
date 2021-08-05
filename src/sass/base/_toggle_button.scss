@@ -1,84 +1,84 @@
-:root {
-  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
+// :root {
+//   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+// }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+// *,
+// *::before,
+// *::after {
+//   box-sizing: border-box;
+// }
 
-body {
-  margin: 0;
-  transition: color 150ms var(--timing-function), background-color 150ms var(--timing-function);
-}
+// body {
+//   margin: 0;
+//   transition: color 150ms var(--timing-function), background-color 150ms var(--timing-function);
+// }
 
-body.light-theme {
-  background-color: #fff;
-  color: #333333;
-}
+// body.light-theme {
+//   background-color: #fff;
+//   color: #333333;
+// }
 
-body.dark-theme {
-  background-color: #333333;
-  //color: #fff;
-}
+// body.dark-theme {
+//   background-color: #333333;
+//   //color: #fff;
+// }
 
-.toolbar {
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 16px;
-}
+// .toolbar {
+//   display: flex;
+//   justify-content: flex-end;
+//   padding-top: 16px;
+// }
 
-/* THEME SWITCH */
+// /* THEME SWITCH */
 
-.theme-switch__control {
-  position: relative;
-  overflow: hidden;
-  width: 64px;
-  height: 50px;
-  padding: 3px 0;
-}
+// .theme-switch__control {
+//   position: relative;
+//   overflow: hidden;
+//   width: 64px;
+//   height: 50px;
+//   padding: 3px 0;
+// }
 
-.theme-switch__toggle {
-  position: absolute;
+// .theme-switch__toggle {
+//   position: absolute;
 
-  height: 0;
-  width: 0;
-  pointer-events: none;
-}
+//   height: 0;
+//   width: 0;
+//   pointer-events: none;
+// }
 
-.theme-switch__track {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  user-select: none;
+// .theme-switch__track {
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+//   width: 100%;
+//   height: 100%;
+//   user-select: none;
 
-  z-index: 1;
-  cursor: pointer;
+//   z-index: 1;
+//   cursor: pointer;
 
-  &::after {
-    content: '';
-    position: absolute;
-    display: inline-block;
-    top: 0%;
+//   &::after {
+//     content: '';
+//     position: absolute;
+//     display: inline-block;
+//     top: 0%;
 
-    background-image: url('../images/film-strip.svg');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-origin: border-box;
-    outline: none;
-    border: none;
-    width: 50px;
-    height: 50px;
-  }
-}
+//     background-image: url('../images/film-strip.svg');
+//     background-size: 100%;
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     background-origin: border-box;
+//     outline: none;
+//     border: none;
+//     width: 50px;
+//     height: 50px;
+//   }
+// }
 
-.theme-switch__icon_hiden {
-  width: 50px;
-  height: 50px;
-  transform: translateY(-51px);
-  fill: #ff6b08;
-}
+// .theme-switch__icon_hiden {
+//   width: 50px;
+//   height: 50px;
+//   transform: translateY(-51px);
+//   fill: #ff6b08;
+// }
