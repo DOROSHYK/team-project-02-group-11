@@ -25,10 +25,13 @@ export default function renderLibraryPage(date) {
                
     const resultLibrary = date.map(el => cardImage(el)).join('');
     getRefs().library.insertAdjacentHTML('beforeend', resultLibrary);
-             
-    getRefs().addToQueueBtnModal.textContent = 'Remove queue';
-    getRefs().addToWatchedBtnModal.textContent = 'Remove watched';
-               
+    document.body.querySelector('#add-queue').textContent = 'Remove queue';
+    document.body.querySelector('#add-watched').textContent = 'Remove watched';         
+    // getRefs().addToQueueBtnModal.textContent = 'Remove queue';
+    // getRefs().addToWatchedBtnModal.textContent = 'Remove watched';
+    console.log(getRefs().addToQueueBtnModal);
+    document.body.querySelector('#add-queue').className = 'remove-from-queue add-button uppercase';
+     document.body.querySelector('#add-watched').className = 'remove-from-watched add-button uppercase';         
     //removeBtnsTextContent();
 }
 
@@ -40,14 +43,15 @@ export default function renderLibraryPage(date) {
             refs.header.classList.add('header-library');
             refs.headerInputWrap.classList.add('hide');
              let someDate = loc.getWatched();
-
+             
             if (loc.getWatched().length === 0 && loc.getQueue().length > 0) {
                 someDate = loc.getQueue();
                 refs.headerBtns[1].classList.add('button--current');
                 refs.headerBtns[0].classList.remove('button--current');
-                
+                document.body.querySelector('#add-watched').style.display = 'none';
            } else {
-               someDate = loc.getWatched();
+                someDate = loc.getWatched();
+                document.body.querySelector('#add-queue').style.display = 'none';
            }
            setTimeout(() => {
                renderLibraryPage(someDate);   
@@ -56,7 +60,11 @@ export default function renderLibraryPage(date) {
 
         } else {
             removeElementClass()
-            refs.header.classList.add('header-home');
+           refs.header.classList.add('header-home');
+           document.body.querySelector('#add-watched').style.display = 'block';
+           document.body.querySelector('#add-queue').style.display = 'block';
+           document.body.querySelector('#add-watched').className = 'add-to-watched watched add-button uppercase';
+           document.body.querySelector('#add-queue').className = 'add-button add-to-queue queue uppercase';
         }
     }
 }

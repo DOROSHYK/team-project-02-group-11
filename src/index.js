@@ -19,7 +19,7 @@ import './js/movie-modal.js';
 import './js/storageEventListeners';
 // import './js/filmCardShot.js';
 import './js/header-btns-listener.js';
-import './js/removeBtnTextContent.js';
+// import './js/removeBtnTextContent.js';
 
 
 

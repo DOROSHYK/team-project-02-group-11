@@ -15,12 +15,16 @@ function onMyLibrary(e) {
       someDate = loc.getWatched();
       refs.headerBtns[0].classList.add('button--current');
       refs.headerBtns[1].classList.remove('button--current');
+      document.body.querySelector('#add-watched').style.display = 'block';
+      document.body.querySelector('#add-queue').style.display = 'none';
   }   
 
   else if (e.target.textContent === 'Queue') {
       someDate = loc.getQueue();
       refs.headerBtns[1].classList.add('button--current');
       refs.headerBtns[0].classList.remove('button--current');
+      document.body.querySelector('#add-watched').style.display = 'none';
+      document.body.querySelector('#add-queue').style.display = 'block';
     }
     
     setTimeout(() => {
