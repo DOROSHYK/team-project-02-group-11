@@ -1,4 +1,3 @@
-import './static/js/app.js';
 import './js/changePage.js';
 
 import LocalStorage from './js/LocalStorage';

@@ -43,11 +43,15 @@ export default function renderLibraryPage(date) {
 
  function onHeaderLinkClick(event) {
     if (event.target.classList.contains('header-link')) {
-       if (event.target.getAttribute('href') === '/library') {
+       if (event.target.textContent === 'My library') {
            removeElementClass()
+           
+           refs.sectionHome.classList.add('hide');
+           refs.sectionLibrary.classList.remove('hide');
             refs.navLinks[2].classList.add('site-nav__link--current');
             refs.header.classList.add('header-library');
             refs.headerInputWrap.classList.add('hide');
+           
              let someDate = loc.getWatched();
              
             if (loc.getWatched().length === 0 && loc.getQueue().length > 0) {
@@ -64,13 +68,18 @@ export default function renderLibraryPage(date) {
            }, 0)
            
 
-        } else {
+       }
+       else if (event.target.textContent === 'Home'){
             removeElementClass()
            refs.header.classList.add('header-home');
+           refs.navLinks[1].classList.add('site-nav__link--current');
            document.body.querySelector('#add-watched').style.display = 'block';
            document.body.querySelector('#add-queue').style.display = 'block';
            document.body.querySelector('#add-watched').className = 'add-to-watched watched add-button uppercase';
            document.body.querySelector('#add-queue').className = 'add-button add-to-queue queue uppercase';
+           refs.sectionHome.classList.remove('hide');
+           refs.sectionLibrary.classList.add('hide');
+           refs.headerBtnWrap.classList.add('hide');
         }
     }
 }

@@ -38,5 +38,7 @@ export default function getRefs() {
         addToWatchedBtnsFilmCard: document.querySelectorAll('.film__button.add-to-watched'),
         addToQueueBtnsFilmCard: document.querySelectorAll('.film__button.add-to-queue'),
         titleOnCard: document.querySelectorAll('.filmCardShot-title'),
+        sectionHome: document.querySelector('.film-cards.home'),
+        sectionLibrary: document.querySelector('.film-cards.library'),
     }
 }
