@@ -18,7 +18,7 @@ console.log(API.isLoading);
 
 const ioCallback = ([entrie], observerRef) => {
     refs = getRefs();
-    
+    refs.toTopBtn.classList.remove('visually-hidden');
     if (API.isLoading) {
 
         if (!entrie.isIntersecting) return;
