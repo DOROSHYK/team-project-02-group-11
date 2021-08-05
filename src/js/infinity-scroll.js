@@ -18,7 +18,7 @@ window.addEventListener('scroll',() => {
 
     const refs = getRefs();
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-    if (clientHeight + scrollTop >= scrollHeight) {
+    if (clientHeight + scrollTop >= scrollHeight-400) {
         refs.toTopBtn.classList.remove('visually-hidden');
         if (refs.navLinks[2].classList.contains('site-nav__link--current')) {
         return;
@@ -49,7 +49,7 @@ function onMagic(e) {
         // stopSpin();
     searchQuery = e.target.value;
 
-    if (!searchQuery.trim().length)  return notification.incorrectRequest();;
+    if (!searchQuery.trim().length)  return notification.incorrectRequest();
     stopSpin();
    
     API.getFilmByKeyword(searchQuery)
