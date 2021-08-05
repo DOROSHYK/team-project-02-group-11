@@ -17,9 +17,8 @@ let searchQuery = '';
 
 const ioCallback = ([entrie], observerRef) => {
     refs = getRefs();
-    refs.toTopBtn.classList.remove('visually-hidden');
+   
     if (API.isLoading) {
-
         if (!entrie.isIntersecting) return;
 
          else if (!refs.popFilmList.classList.contains('visually-hidden')) {
@@ -33,6 +32,7 @@ const ioCallback = ([entrie], observerRef) => {
             API.getFilmByKeyword(searchQuery)
                  .then(make);
         };
+        refs.toTopBtn.classList.remove('visually-hidden');
   }
 };
 

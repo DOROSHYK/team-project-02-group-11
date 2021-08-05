@@ -32,7 +32,7 @@ export default class LocalStorage {
         
         this.saveAll(films)
         notification.addToQueue();
-        console.log(films)
+        // console.log(films)
     }
     getQueue() {
        return this.loadAll().queue;
@@ -55,7 +55,7 @@ export default class LocalStorage {
         
         this.saveAll(films);
         notification.addToWatched();
-        console.log(films)
+        // console.log(films)
     }
     getWatched() {
         return this.loadAll().watched;
