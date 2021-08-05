@@ -13,7 +13,7 @@ let refs = getRefs();
 // const debounce = require('lodash.debounce');
 
 let searchQuery = '';
-console.log(API.isLoading);
+// console.log(API.isLoading);
 //=====   infinity scroll
 
 const ioCallback = ([entrie], observerRef) => {
