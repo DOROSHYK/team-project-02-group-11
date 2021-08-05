@@ -53,7 +53,6 @@ function savedTheme() {
      refs.allPage.classList.add(saveTheme);
      if (saveTheme === Theme.DARK) {
        refs.buttonTheme.checked = true;
-       refs.titleOnCard.style.color = '#ffffff';
      }
   }
 }
