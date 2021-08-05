@@ -57,7 +57,7 @@ function hideModal() {
 export function addMovieModalListener() {
     refs.movieModal.addEventListener('click', closeMovieModal);
     document.body.style.overflow = 'hidden';
-    document.addEventListener('keydown', onEscapeClose);
+    document.addEventListener('keydown', onEscapeMovieClose);
     refs.closeModalButton.addEventListener('click', closeMovieModal)
 }
 
@@ -66,7 +66,15 @@ function closeMovieModal(event) {
     onMovieBackdropClick(event);
 }
 
+function onEscapeMovieClose(event) {
+        if (event.code === 'Escape') {
+        hideMovieModal();
+        document.body.style.overflow = 'auto';
+    } 
+}
+
 function onCloseMovieBtnClick(event) {
+
     //if (event.target.classList.contains('close-movie-modal-js')) { //|| event.target.classList.contains('js-close-movie-modal-icon')) {
         hideMovieModal();
         //removeMovieListeners();
@@ -81,11 +89,13 @@ function onCloseMovieBtnClick(event) {
 }
 
 function hideMovieModal() {
+    
     refs.movieModal.classList.add('is-hidden');
+
 }
 
 function removeMovieListeners() {
-    document.removeEventListener('keydown', onEscapeClose);
+    document.removeEventListener('keydown', onEscapeMovieClose);
     refs.movieModal.removeEventListener('click', closeMovieModal);
     document.body.style.overflow = 'auto';
 }
@@ -95,7 +105,7 @@ function onMovieBackdropClick(event) {
     //     return;
     // }
     hideMovieModal();
-   // removeMovieListeners();
+   removeMovieListeners();
 }
 
 
