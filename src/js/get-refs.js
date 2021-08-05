@@ -33,10 +33,10 @@ export default function getRefs() {
         cardFilBtnWrap: document.querySelector('.card-film-btn__container'),
         movieModalBtn: document.querySelector('.add-buttons-list'),
         headerBtns: document.querySelectorAll('.header__button'),
-
-        addToWatchedBtnModal: document.getElementById('add-watched'),
-        addToQueueBtnModal: document.querySelector('.add-button.queue'),
-        // addToWatchedBtnsFilmCard: document.querySelectorAll('.film__button.watched'),
-        // addToQueueBtnsFilmCard: document.querySelectorAll('.film__button.queue'),
+        addToWatchedBtnModal: document.querySelector('.add-button.add-to-watched'),
+        addToQueueBtnModal: document.querySelector('.add-button.add-to-queue'),
+        addToWatchedBtnsFilmCard: document.querySelectorAll('.film__button.add-to-watched'),
+        addToQueueBtnsFilmCard: document.querySelectorAll('.film__button.add-to-queue'),
+        titleOnCard: document.querySelectorAll('.filmCardShot-title'),
     }
 }

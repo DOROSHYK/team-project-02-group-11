@@ -29,7 +29,7 @@ function onMyLibrary(e, remove) {
   const resultLibrary = someDate.map(el => {
     let genresArr = el.genres.split(', ');
     if (genresArr.length > 2) {
-      el.genres = genresArr.splice(0, 2).join(', ') + ", others"
+      el.genres = genresArr.splice(0, 2).join(', ') + ", Other"
     }
     return cardImage(el)
   }).join('');
