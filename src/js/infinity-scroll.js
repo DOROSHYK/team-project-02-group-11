@@ -17,6 +17,9 @@ let searchQuery = '';
 //=====   infinity scroll
 
 const ioCallback = ([entrie], observerRef) => {
+    if (refs.navLinks[2].classList.contains('site-nav__link--current')) {
+        return;
+        }
     refs = getRefs();
     refs.toTopBtn.classList.remove('visually-hidden');
     if (API.isLoading) {
