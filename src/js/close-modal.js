@@ -49,7 +49,7 @@ function removeListeners() {
 function hideModal() {
     refs.footerModal.classList.add('is-hidden');
     //refs.movieModal.classList.add('is-hidden');
-    refs.iconTheme.style.zIndex = 1;
+    // refs.iconTheme.style.zIndex = 1;
 }
 
 //movieModal
