@@ -7,28 +7,29 @@ refs.footerModalOpener.addEventListener('click', onOpenTeamModal);
 function onOpenTeamModal(){
     refs.footerModal.classList.remove('is-hidden');
     document.body.style.overflow = 'hidden';
-    refs.footerModal.addEventListener('click', closeFooterModal);
+    refs.footerModal.addEventListener('click', onFooterBackdropClick);
+    refs.footerCloseModalBtn.addEventListener('click', onCloseFooterBtnClick)
     document.addEventListener('keydown', onEscapeClose);
     refs.iconTheme.style.zIndex = -1;
 };
 
-export function onEscapeClose(event) {
+
+function onEscapeClose(event) {
     if (event.code === 'Escape') {
         hideModal();
         document.body.style.overflow = 'auto';
     } 
 }
 
-function closeFooterModal(event) {
-    onCloseFooterBtnClick(event);
-    onFooterBackdropClick(event);
-}
+// function closeFooterModal(event) {
+//     onCloseFooterBtnClick(event);
+//     onFooterBackdropClick(event);
+// }
 
 function onCloseFooterBtnClick(event) {
-    if (event.target.classList.contains('close-footer-modal-js') || event.target.classList.contains('js-close-footer-modal-icon')) {
         hideModal();
         removeListeners();
-    }    
+       
 };
 
 
@@ -42,7 +43,7 @@ function onFooterBackdropClick(event) {
 
 function removeListeners() {
     document.removeEventListener('keydown', onEscapeClose);
-    refs.footerModal.removeEventListener('click', closeFooterModal);
+    refs.footerModal.removeEventListener('click', onFooterBackdropClick);//closeFooterModal);
     document.body.style.overflow = 'auto';
 }
 
@@ -55,28 +56,28 @@ function hideModal() {
 //movieModal
 
 export function addMovieModalListener() {
-    refs.movieModal.addEventListener('click', closeMovieModal);
+    refs.movieModal.addEventListener('click', onMovieBackdropClick);
     document.body.style.overflow = 'hidden';
-    document.addEventListener('keydown', onEscapeMovieClose);
-    refs.closeModalButton.addEventListener('click', closeMovieModal)
+   document.addEventListener('keydown', onEscapeMovieClose);
+    refs.closeModalButton.addEventListener('click', hideMovieModal)//onCloseMovieBtnClick)
 }
 
-function closeMovieModal(event) {
-    onCloseMovieBtnClick(event);
-    onMovieBackdropClick(event);
-}
+// function closeMovieModal(event) {
+//     //if (event.target.classList.contains('movie-modal')) return;
+//     onCloseMovieBtnClick(event);
+//     onMovieBackdropClick(event);
+// }
 
 function onEscapeMovieClose(event) {
         if (event.code === 'Escape') {
         hideMovieModal();
-        document.body.style.overflow = 'auto';
+        //document.body.style.overflow = 'auto';
     } 
 }
 
-function onCloseMovieBtnClick(event) {
-
-    //if (event.target.classList.contains('close-movie-modal-js')) { //|| event.target.classList.contains('js-close-movie-modal-icon')) {
-        hideMovieModal();
+// function onCloseMovieBtnClick(event) {
+//    // if (!event.target.nodeName !== "BUTTON") return;
+//         hideMovieModal();
         //removeMovieListeners();
         
         // document.querySelector('#add-watched').textContent = "Add to watched";
@@ -86,7 +87,7 @@ function onCloseMovieBtnClick(event) {
         // document.querySelector('#add-queue').className = "add-button add-to-queue uppercase";
         
     //}
-}
+//}
 
 function hideMovieModal() {
     
@@ -94,18 +95,17 @@ function hideMovieModal() {
 
 }
 
-function removeMovieListeners() {
-    document.removeEventListener('keydown', onEscapeMovieClose);
-    refs.movieModal.removeEventListener('click', closeMovieModal);
-    document.body.style.overflow = 'auto';
-}
+// function removeMovieListeners() {
+//     document.removeEventListener('keydown', onEscapeMovieClose);
+//     refs.movieModal.removeEventListener('click', closeMovieModal);
+//     document.body.style.overflow = 'auto';
+// }
 
 function onMovieBackdropClick(event) {
-    // if (!event.target.classList.contains('js-movie-backdrop')) {
-    //     return;
-    // }
-    hideMovieModal();
-   removeMovieListeners();
+    if (!event.target.classList.contains('js-movie-backdrop')) return; 
+        hideMovieModal();
+        //removeMovieListeners();
+    
 }
 
 
