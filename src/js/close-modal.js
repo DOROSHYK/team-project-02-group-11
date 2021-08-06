@@ -71,7 +71,7 @@ export function addMovieModalListener() {
 function onEscapeMovieClose(event) {
         if (event.code === 'Escape') {
         hideMovieModal();
-        //document.body.style.overflow = 'auto';
+        document.body.style.overflow = 'auto';
     } 
 }
 
@@ -92,7 +92,7 @@ function onEscapeMovieClose(event) {
 function hideMovieModal() {
     
     refs.movieModal.classList.add('is-hidden');
-
+document.body.style.overflow = 'auto';
 }
 
 // function removeMovieListeners() {
