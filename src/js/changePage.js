@@ -35,24 +35,26 @@ export default function renderLibraryPage(date) {
     document.body.querySelector('#add-watched').textContent = 'Remove watched';         
     // getRefs().addToQueueBtnModal.textContent = 'Remove queue';
     // getRefs().addToWatchedBtnModal.textContent = 'Remove watched';
-    console.log(getRefs().addToQueueBtnModal);
     document.body.querySelector('#add-queue').className = 'remove-from-queue add-button uppercase';
      document.body.querySelector('#add-watched').className = 'remove-from-watched add-button uppercase';         
     //removeBtnsTextContent();
 }
 
- function onHeaderLinkClick(event) {
-    if (event.target.classList.contains('header-link')) {
-       if (event.target.textContent === 'My library') {
-           removeElementClass()
-           
-           refs.sectionHome.classList.add('hide');
-           refs.sectionLibrary.classList.remove('hide');
-            refs.navLinks[2].classList.add('site-nav__link--current');
-            refs.header.classList.add('header-library');
-            refs.headerInputWrap.classList.add('hide');
-           
-             let someDate = loc.getWatched();
+
+function removeElementClass() {
+    refs.navLinks.forEach((link) => {
+    link.classList.remove('site-nav__link--current');
+    })
+
+    refs.headerBtnWrap.classList.remove('hide');
+    refs.headerInputWrap.classList.remove('hide');
+    refs.header.classList.remove('header-home');
+    refs.header.classList.remove('header-library');
+}
+
+
+function changeLibraryList() {
+    let someDate = loc.getWatched();
              
             if (loc.getWatched().length === 0 && loc.getQueue().length > 0) {
                 someDate = loc.getQueue();
@@ -66,8 +68,21 @@ export default function renderLibraryPage(date) {
            setTimeout(() => {
                renderLibraryPage(someDate);   
            }, 0)
-           
+}
 
+
+function onHeaderLinkClick(event) {
+    if (event.target.classList.contains('header-link')) {
+       if (event.target.textContent === 'My library') {
+           removeElementClass()
+           
+            refs.sectionHome.classList.add('hide');
+            refs.sectionLibrary.classList.remove('hide');
+            refs.navLinks[2].classList.add('site-nav__link--current');
+            refs.header.classList.add('header-library');
+            refs.headerInputWrap.classList.add('hide');
+           
+            changeLibraryList()
        }
        else if (event.target.textContent === 'Home'){
             removeElementClass()
@@ -82,15 +97,4 @@ export default function renderLibraryPage(date) {
            refs.headerBtnWrap.classList.add('hide');
         }
     }
-}
-
-function removeElementClass() {
-    refs.navLinks.forEach((link) => {
-    link.classList.remove('site-nav__link--current');
-    })
-
-    refs.headerBtnWrap.classList.remove('hide');
-    refs.headerInputWrap.classList.remove('hide');
-    refs.header.classList.remove('header-home');
-    refs.header.classList.remove('header-library');
 }

@@ -90,9 +90,10 @@ h3 {
   line-height: 1.67;
 }
 
-.add-buttons-list {
+.add-buttons-wrap {
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
 }
 
 .add-button {
@@ -111,11 +112,24 @@ h3 {
 
   &:hover,
   &:focus {
-    cursor: pointer;
-    background-color: $accent-color;
-    border-color: $accent-color;
-    color: $main-bg-color;
+   cursor: pointer;
+   background-color: $accent-color;
+   border-color: $accent-color;
+   color: $main-bg-color;
+ }
+
+  &[disabled],
+  &[disabled] {
+    cursor: none;
+    background-color: transparent;
+    border-color: rgb(163, 158, 158);
+    color: rgb(163, 158, 158);
   }
+
+  &:not(:last-child) {
+  margin-right: 15px;
+
+}
 }
 
 @media screen and (min-width: 768px) {
@@ -136,7 +150,7 @@ h3 {
     margin-bottom: 0;
   }
 
-  .add-buttons-list {
+  .add-buttons-wrap {
     position: absolute;
     right: 29px;
     bottom: 40px;
@@ -170,7 +184,7 @@ h3 {
     width: 300px;
   }
 
-  .add-buttons-list {
+  .add-buttons-wrap {
     right: 139px;
     width: 287px;
   }

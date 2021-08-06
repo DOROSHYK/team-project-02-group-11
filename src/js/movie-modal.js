@@ -21,8 +21,28 @@ function onMovieClick(event) {
             return objRender
         }).then(appendMarkup);
         document.body.style.overflow = 'hidden';
+        
     }
-}
+
+    getRefs().movieModal.addEventListener('click', onModalButtonClick);
+
+function onModalButtonClick(e) {
+
+    if (e.target.dataset.id || e.target.parentNode.dataset.id) {
+        if (e.target.classList.contains('add-button')) {
+            if (e.target.textContent === 'Add to watched' || e.target.textContent === 'Remove watched') {
+                e.target.disabled = false;
+                e.target.nextElementSibling.disabled = true;
+            }
+
+            else if (e.target.textContent === 'Add to queue' || e.target.textContent === 'Remove queue') {
+                e.target.disabled = false;
+                e.target.previousElementSibling.disabled = true;   
+            };
+        };
+    };
+    };
+};
 
 function appendMarkup(data) {
     refs.movieModalInfoContainer.innerHTML = '';
