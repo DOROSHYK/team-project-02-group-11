@@ -10,18 +10,15 @@ import { debounce } from 'lodash';
 
 const API = new ServerAPI;
 let refs = getRefs();
-// const debounce = require('lodash.debounce');
-
 let searchQuery = '';
 
 //=====   infinity scroll
 
 const ioCallback = ([entrie], observerRef) => {
     if (refs.navLinks[2].classList.contains('site-nav__link--current')) {
-        return;
-        }
-    refs = getRefs();
-   
+         return;
+         }
+      
     if (API.isLoading) {
         if (!entrie.isIntersecting) return;
 
@@ -41,19 +38,16 @@ const ioCallback = ([entrie], observerRef) => {
 };
 
 const observer = new IntersectionObserver(ioCallback, { threshold: 0.5 });
-
 const target = document.querySelector('#anchor');
 observer.observe(target);
 
-
-
-refs.inputRef.addEventListener('input',  debounce(onMagic,  1500));
+refs.inputRef.addEventListener('input',  debounce(onMagic,  1500)); //-- рендер по слову
+API.getPopularFilmList().then(renderPopFilms); //-- первый рендер поп фильмов
 
 function onMagic(e) {
     //e.preventDefault();
     API.isLoading = true;
     API.page = 1;
-    const refs = getRefs();
     refs.gallery.innerHTML = '';
     refs.popFilmList.classList.remove('visually-hidden');
         // stopSpin();
@@ -72,9 +66,6 @@ function renderPopFilms(filmData) {
     const dataForRender = filmData.results.map(result => API.getObjectForRender(result));
     // if (dataForRender.poster_path)
 
-
-    
-    
     const markup = tempFilmCard(dataForRender);
     const refs = getRefs();
 
@@ -82,4 +73,4 @@ function renderPopFilms(filmData) {
 //refs.footer.classList.remove('is-fixed');
 };
 
- API.getPopularFilmList().then(renderPopFilms);
+
