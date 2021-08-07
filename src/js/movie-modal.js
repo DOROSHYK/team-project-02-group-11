@@ -59,18 +59,9 @@ export default function onModalButtonClick(e) {
     };
     };
 
-
-
-
 function appendMarkup(data) {
     refs.movieModalInfoContainer.innerHTML = '';
-
-    let classText = 'add-to-watched watched';
-    let text = 'add to';
-
     const moveCardCh = movieCardTemplate(data);
-
-    //console.log(moveCardCh);
 
     refs.movieModalInfoContainer.insertAdjacentHTML('beforeend', movieCardTemplate(data));
 };
@@ -78,8 +69,6 @@ function appendMarkup(data) {
 function currentButton() {
      document.body.querySelector('#add-queue').textContent = 'Remove queue';
     document.body.querySelector('#add-watched').textContent = 'Remove watched';         
-    // // getRefs().addToQueueBtnModal.textContent = 'Remove queue';
-    // // getRefs().addToWatchedBtnModal.textContent = 'Remove watched';
     document.body.querySelector('#add-queue').className = 'remove-from-queue add-button uppercase';
     document.body.querySelector('#add-watched').className = 'remove-from-watched add-button uppercase';
 

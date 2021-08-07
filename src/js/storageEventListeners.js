@@ -30,16 +30,17 @@ const onQueue = (e) => {
 
 const onRemoveWatched = (e) => {
     const className = String(e.target.className);
+    console.log(className);
     if (!className.includes('remove-from-watched')) { return }
     const id = e.path[2].dataset.id || LS.getLastFilm().id;
     LS.removeFromWatched(id);
-    if (document.URL.includes('library')) {
+   // if (document.URL.includes('library')) {
    
         if (!refs.movieModal.classList.contains('is-hidden')) {
             refs.movieModal.classList.add('is-hidden')
         }
         onMyLibrary(e, 'watched');
-    }
+   // }
 }
 const onRemoveQueue = (e) => {
     const className = String(e.target.className);
@@ -47,13 +48,13 @@ const onRemoveQueue = (e) => {
     const id = e.path[2].dataset.id || LS.getLastFilm().id;
     LS.removeFromQueue(id);
 
-    if (document.URL.includes('library')) {
+   // if (document.URL.includes('library')) {
         if (!refs.movieModal.classList.contains('is-hidden')) {
             refs.movieModal.classList.add('is-hidden')
         }
         
         onMyLibrary(e, 'queue')
-    }
+  //  }
 }
 
 
