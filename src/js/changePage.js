@@ -55,10 +55,11 @@ function changeLibraryList() {
                 someDate = loc.getQueue();
                 refs.headerBtns[1].classList.add('button--current');
                 refs.headerBtns[0].classList.remove('button--current');
-               // document.body.querySelector('#add-watched').style.display = 'none';
+
+                //document.body.querySelector('#add-watched').style.display = 'none';
            } else {
                 someDate = loc.getWatched();
-               // document.body.querySelector('#add-queue').style.display = 'none';
+                //document.body.querySelector('#add-queue').style.display = 'none';
            }
            setTimeout(() => {
                renderLibraryPage(someDate);   
