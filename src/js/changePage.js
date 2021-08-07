@@ -55,10 +55,10 @@ function changeLibraryList() {
                 someDate = loc.getQueue();
                 refs.headerBtns[1].classList.add('button--current');
                 refs.headerBtns[0].classList.remove('button--current');
-                document.body.querySelector('#add-watched').style.display = 'none';
+               // document.body.querySelector('#add-watched').style.display = 'none';
            } else {
                 someDate = loc.getWatched();
-                document.body.querySelector('#add-queue').style.display = 'none';
+               // document.body.querySelector('#add-queue').style.display = 'none';
            }
            setTimeout(() => {
                renderLibraryPage(someDate);   
@@ -69,7 +69,7 @@ function changeLibraryList() {
 function onHeaderLinkClick(event) {
     if (event.target.classList.contains('header-link')) {
        if (event.target.textContent === 'My library') {
-           removeElementClass()
+           removeElementClass();
            
             refs.sectionHome.classList.add('hide');
             refs.sectionLibrary.classList.remove('hide');
@@ -80,13 +80,13 @@ function onHeaderLinkClick(event) {
             changeLibraryList()
        }
        else if (event.target.textContent === 'Home'){
-            removeElementClass()
+           removeElementClass();
            refs.header.classList.add('header-home');
            refs.navLinks[1].classList.add('site-nav__link--current');
-           document.body.querySelector('#add-watched').style.display = 'block';
-           document.body.querySelector('#add-queue').style.display = 'block';
-           document.body.querySelector('#add-watched').className = 'add-to-watched watched add-button uppercase';
-           document.body.querySelector('#add-queue').className = 'add-button add-to-queue queue uppercase';
+          // document.body.querySelector('#add-watched').style.display = 'block';
+          // document.body.querySelector('#add-queue').style.display = 'block';
+          // document.body.querySelector('#add-watched').className = 'add-to-watched watched add-button uppercase';
+          // document.body.querySelector('#add-queue').className = 'add-button add-to-queue queue uppercase';
            refs.sectionHome.classList.remove('hide');
            refs.sectionLibrary.classList.add('hide');
            refs.headerBtnWrap.classList.add('hide');
