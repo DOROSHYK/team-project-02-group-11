@@ -17,8 +17,6 @@ function onMovieClick(event) {
         refs.movieModal.classList.remove('is-hidden');
         addMovieModalListener();
 
-        
-
         if (!refs.headerBtnWrap.classList.contains('hide')) {
         api.getFilmInfoById(event.target.dataset.id).then(data => {
             const objRender = api.getObjectForRender(data);
@@ -89,18 +87,9 @@ export default function onModalButtonClick(e) {
     };
     };
 
-
-
-
 function appendMarkup(data) {
     refs.movieModalInfoContainer.innerHTML = '';
-
-    let classText = 'add-to-watched watched';
-    let text = 'add to';
-
     const moveCardCh = movieCardTemplate(data);
-
-    //console.log(moveCardCh);
 
     refs.movieModalInfoContainer.insertAdjacentHTML('beforeend', movieCardTemplate(data));
 };
@@ -108,11 +97,19 @@ function appendMarkup(data) {
 function currentButton() {
      document.body.querySelector('#add-queue').textContent = 'Remove queue';
     document.body.querySelector('#add-watched').textContent = 'Remove watched';         
-    // // getRefs().addToQueueBtnModal.textContent = 'Remove queue';
-    // // getRefs().addToWatchedBtnModal.textContent = 'Remove watched';
     document.body.querySelector('#add-queue').className = 'remove-from-queue add-button uppercase';
     document.body.querySelector('#add-watched').className = 'remove-from-watched add-button uppercase';
-    
+
+    document.querySelector('.add-buttons-wrap').lastElementChild.setAttribute("disabled", "disabled");
+
+    if (refs.headerBtns[1].classList.contains('button--current')) {
+        document.querySelector('.add-buttons-wrap').firstElementChild.setAttribute("disabled", "disabled");
+        document.querySelector('.add-buttons-wrap').lastElementChild.disabled = false;
+
+    }
+
+
+               
 }
 
  
