@@ -27,17 +27,12 @@ export default function renderLibraryPage(date) {
         let genresArr = el.genres.split(', ');
         if (genresArr.length > 2) {
             el.genres = genresArr.splice(0, 2).join(', ') + ", Other"
-        }
+        };
+    
         return cardImage(el)
     }).join('');
     getRefs().library.insertAdjacentHTML('beforeend', resultLibrary);
-    document.body.querySelector('#add-queue').textContent = 'Remove queue';
-    document.body.querySelector('#add-watched').textContent = 'Remove watched';         
-    // getRefs().addToQueueBtnModal.textContent = 'Remove queue';
-    // getRefs().addToWatchedBtnModal.textContent = 'Remove watched';
-    document.body.querySelector('#add-queue').className = 'remove-from-queue add-button uppercase';
-     document.body.querySelector('#add-watched').className = 'remove-from-watched add-button uppercase';         
-    //removeBtnsTextContent();
+        // //removeBtnsTextContent();
 }
 
 

@@ -15,22 +15,40 @@ function onMovieClick(event) {
     if (event.target.dataset.id || event.target.parentNode.dataset.id) {
         refs.movieModal.classList.remove('is-hidden');
         addMovieModalListener();
+
+        
+
+        if (!refs.headerBtnWrap.classList.contains('hide')) {
         api.getFilmInfoById(event.target.dataset.id).then(data => {
             const objRender = api.getObjectForRender(data);
             LS.addFilm(objRender);
             return objRender
-        }).then(appendMarkup);
+        }).then(appendMarkup)
+           .then(currentButton);
+        document.body.style.overflow = 'hidden';
+            return;
+        }
+
+        api.getFilmInfoById(event.target.dataset.id).then(data => {
+            const objRender = api.getObjectForRender(data);
+            LS.addFilm(objRender);
+            return objRender
+        }).then(appendMarkup)
+          
         document.body.style.overflow = 'hidden';
         
     }
+};
 
     getRefs().movieModal.addEventListener('click', onModalButtonClick);
 
-function onModalButtonClick(e) {
+export default function onModalButtonClick(e) {
 
     if (e.target.dataset.id || e.target.parentNode.dataset.id) {
         if (e.target.classList.contains('add-button')) {
+
             if (e.target.textContent === 'Add to watched' || e.target.textContent === 'Remove watched') {
+
                 e.target.disabled = false;
                 e.target.nextElementSibling.disabled = true;
             }
@@ -42,13 +60,30 @@ function onModalButtonClick(e) {
         };
     };
     };
-};
+
+
+
 
 function appendMarkup(data) {
     refs.movieModalInfoContainer.innerHTML = '';
+
+    let classText = 'add-to-watched watched';
+    let text = 'add to';
+
+    const moveCardCh = movieCardTemplate(data);
+
+    //console.log(moveCardCh);
+
     refs.movieModalInfoContainer.insertAdjacentHTML('beforeend', movieCardTemplate(data));
+};
+
+function currentButton() {
+     document.body.querySelector('#add-queue').textContent = 'Remove queue';
+    document.body.querySelector('#add-watched').textContent = 'Remove watched';         
+    // // getRefs().addToQueueBtnModal.textContent = 'Remove queue';
+    // // getRefs().addToWatchedBtnModal.textContent = 'Remove watched';
+    document.body.querySelector('#add-queue').className = 'remove-from-queue add-button uppercase';
+    document.body.querySelector('#add-watched').className = 'remove-from-watched add-button uppercase';
+    
 }
 
-// function getMovieData(id) {
-//     api.getFilmInfoById(id);
-// }
