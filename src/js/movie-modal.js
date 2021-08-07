@@ -128,7 +128,7 @@ function currentButton() {
         if (filmsInQueue.includes(idFilm)) {
             console.log(1)
             // console.log(getRefs().addToQueueBtnModal)
-            // getRefs().addToWatchedBtnModal.disabled = true;
+            //getRefs().addToWatchedBtnModal.disabled = true;
             // getRefs().addToQueueBtnModal.textContent = 'Remove queue';
             // getRefs().addToQueueBtnModal.classList.add('remove-from-queue add-button uppercase');
             // getRefs().addToQueueBtnModal.classList.remove('add-button add-to-queue queue uppercase');
